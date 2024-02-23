@@ -1,13 +1,16 @@
 
 # TODO
-https://colab.research.google.com/github/https-deeplearning-ai/tensorflow-1-public/blob/master/C1/W4/ungraded_labs/C1_W4_Lab_3_compacted_images.ipynb#scrollTo=ClebU9NJg99G
 
-https://keras.io/api/layers/preprocessing_layers/
+<https://colab.research.google.com/github/https-deeplearning-ai/tensorflow-1-public/blob/master/C1/W4/ungraded_labs/C1_W4_Lab_3_compacted_images.ipynb#scrollTo=ClebU9NJg99G>
 
-https://www.kaggle.com/datasets/rmisra/news-headlines-dataset-for-sarcasm-detection
+<https://keras.io/api/layers/preprocessing_layers/>
+
+<https://www.kaggle.com/datasets/rmisra/news-headlines-dataset-for-sarcasm-detection>
 
 ## Certification
+
 Machine Learning Engineer:
+
 * TensorFlow Developer Certificate
 * CompTIA Data+ 
 * AWS Machine Learning Specialty
@@ -17,16 +20,20 @@ Machine Learning Engineer:
 # NOTE
 
 ## Lecture
+
 ### C2W2 
 
 #### learning object
+
 * Build a multiclass classifier for the Sign Language MNIST dataset
 * Learn how to properly set up the ImageDataGenerator parameters and the model definition functions for multiclass classification
 * Understand the difference between using actual image files vs images encoded in other formats and how this changes the methods available when using ImageDataGenerator
 * Code a helper function to parse a raw CSV file which contains the information of the pixel values for the images used
 
 ### C3W2
+
 #### takeaways
+
 You looked at taking your tokenized words and passing them to an Embedding layer.
 
 * Embeddings map your vocabulary to vectors in higher-dimensional space. 
@@ -40,16 +47,20 @@ You looked at taking your tokenized words and passing them to an Embedding layer
 ![Error types](image.png)]\
 
 ### C4W3
+
 RNN
 ![alt text](./.images/image-2.png)
 RNN return_deq=True
 ![alt text](./.images/image-1.png)
+
 ## summary
+
 * exploring how to use them with large datasets=
 * taking advantage of augmentation, dropout, regularization, and transfer learning
 * and of course, looking at the coding considerations between binary or multi-class classification
 
 ## During Test
+
 * sparse_categorical_crossentropy -> list of array with probability
 * categorical_crossentropy -> one hot target
 
