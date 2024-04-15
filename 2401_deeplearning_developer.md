@@ -12,7 +12,7 @@
 Machine Learning Engineer:
 
 * TensorFlow Developer Certificate
-* CompTIA Data+ 
+* CompTIA Data+
 * AWS Machine Learning Specialty
 * Microsoft Certified: Azure AI Engineer Associate
 * Google Cloud: Professional Machine Learning Engineer
@@ -21,7 +21,7 @@ Machine Learning Engineer:
 
 ## Lecture
 
-### C2W2 
+### C2W2
 
 #### learning object
 
@@ -36,22 +36,22 @@ Machine Learning Engineer:
 
 You looked at taking your tokenized words and passing them to an Embedding layer.
 
-* Embeddings map your vocabulary to vectors in higher-dimensional space. 
+* Embeddings map your vocabulary to vectors in higher-dimensional space.
 
-* The semantics of the words were learned when those words were labeled with similar meanings. For example, when looking at movie reviews, those movies with positive sentiment had the dimensionality of their words ending up pointing a particular way, and those with negative sentiment pointing in a different direction. From these, the words in future reviews could have their direction established and your model can infer the sentiment from it. 
+* The semantics of the words were learned when those words were labeled with similar meanings. For example, when looking at movie reviews, those movies with positive sentiment had the dimensionality of their words ending up pointing a particular way, and those with negative sentiment pointing in a different direction. From these, the words in future reviews could have their direction established and your model can infer the sentiment from it.
 
-* You then looked at subword tokenization and saw that not only do the meanings of the words matter but also the sequence in which they are found. 
+* You then looked at subword tokenization and saw that not only do the meanings of the words matter but also the sequence in which they are found.
 
 ### C4W1
 
-![Error types](image.png)]\
+![alt text](./images/2401_deeplearning_developer/image.png)
 
 ### C4W3
 
 RNN
-![alt text](./.images/image-2.png)
+![alt text](./images/2401_deeplearning_developer/image-2.png)
 RNN return_deq=True
-![alt text](./.images/image-1.png)
+![alt text](./images/2401_deeplearning_developer/image-1.png)
 
 ## summary
 
@@ -145,4 +145,3 @@ Solar Conditions
 
 Daily Minimum Temperatures in Melbourne
  (hosted by Jason Brownlee, source: Australian Bureau of Meteorology)
-

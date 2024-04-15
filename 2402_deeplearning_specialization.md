@@ -1,7 +1,7 @@
 # **General Scope**
 
-![alt text](./.images/image-6.png)
-![alt text](./.images/image-69.png)
+![alt text](./images/2402_deeplearning_specialization/image-6.png)
+![alt text](./images/2402_deeplearning_specialization/image-69.png)
 
 # Table of Contents
 
@@ -33,7 +33,7 @@
 ## C1W1
 
 scale: both big data set and big nn (hidden layers, unit, etc)
-![alt text](./.images/image-7.png)
+![alt text](./images/2402_deeplearning_specialization/image-7.png)
 
 **Geoffery Hinton**
 
@@ -41,24 +41,24 @@ see if you can find an advisor who has beliefs similar to yours. Because if you 
 
 ## C1W2
 
-![alt text](./.images/image-9.png)
+![alt text](./images/2402_deeplearning_specialization/image-9.png)
 numpy product, np.dot(a,b) and a*b is different
 
 ## C1W3
 
 hidden layer: hidden-> not in input data
-![alt text](./.images/image-10.png)
-![alt text](./.images/image-11.png)
+![alt text](./images/2402_deeplearning_specialization/image-10.png)
+![alt text](./images/2402_deeplearning_specialization/image-11.png)
 
 why use none-linear Activation Function?A
-![alt text](./.images/image-12.png)
+![alt text](./images/2402_deeplearning_specialization/image-12.png)
 
 Backpropagation
 [https://jonaslalin.com/2021/12/10/feedforward-neural-networks-part-1/](https://jonaslalin.com/2021/12/10/feedforward-neural-networks-part-1/)
 
 [https://jonaslalin.com/2021/12/21/feedforward-neural-networks-part-2/](https://jonaslalin.com/2021/12/21/feedforward-neural-networks-part-2/)
 
-![alt text](./.images/image-13.png)
+![alt text](./images/2402_deeplearning_specialization/image-13.png)
 
 ```python
 for epoch in epochs:
@@ -72,9 +72,9 @@ for epoch in epochs:
 ## C1W4
 
 why DEEP learning
-![alt text](./.images/image-14.png)
-![alt text](./.images/image-16.png)
-![alt text](./.images/image-18.png)
+![alt text](./images/2402_deeplearning_specialization/image-14.png)
+![alt text](./images/2402_deeplearning_specialization/image-16.png)
+![alt text](./images/2402_deeplearning_specialization/image-18.png)
 
 ---
 ---
@@ -86,10 +86,10 @@ why DEEP learning
 ### Regularizating NN
 
 Train / Dev / Test Set
-![alt text](./.images/image-19.png)
+![alt text](./images/2402_deeplearning_specialization/image-19.png)
 
 Bias and Varias
-![alt text](./.images/image-20.png)
+![alt text](./images/2402_deeplearning_specialization/image-20.png)
 
 Regularization Methods (reduce overfitting):
 
@@ -97,15 +97,15 @@ Regularization Methods (reduce overfitting):
 2. Dropout: can NOT rely on any single feature, need to spead out the weight
 3. Data augment: e.g. img flip/zoom
 4. Early Stop (before overfitting)
-![alt text](./.images/image-21.png)
-![alt text](./.images/image-22.png)
+![alt text](./images/2402_deeplearning_specialization/image-21.png)
+![alt text](./images/2402_deeplearning_specialization/image-22.png)
 
 ### Optimize NN training
 
 1. normalize input -> fast training
 2. vanishing/exploing gradiants: when you're training a very deep network your derivatives or your slopes can sometimes get either very, very big or very, very small, maybe even exponentially small, and this makes training difficult -> weight initialization + numerical approx of gradients
 5. gradient checking (grad check)
-![alt text](./.images/image-23.png)
+![alt text](./images/2402_deeplearning_specialization/image-23.png)
 
 ---
 **XHU-Note:**
@@ -118,7 +118,7 @@ Regularization Methods (reduce overfitting):
 
   To: $$J_{regularized} = -\frac{1}{m} \sum\limits_{i = 1}^{m} \left( y^{(i)}\log\left(a^{[L](i)}\right) + (1-y^{(i)})\log\left(1- a^{[L](i)}\right) \right) + \frac{1}{m} \frac{\lambda}{2} \sum\limits_l\sum\limits_k\sum\limits_j W_{k,j}^{[l]2} \tag{2}$$
 
-  ![alt text](./.images/image-25.png)
+  ![alt text](./images/2402_deeplearning_specialization/image-25.png)
 
 - **Reduce Bias:**
   - Deeper/bigger neural networks can help reduce bias.
@@ -130,18 +130,18 @@ Regularization Methods (reduce overfitting):
 - **$W^{[l]}$ Initialization**
   - Xavier initialization: `sqrt(1./layers_dims[l-1])`
   - He initialization:`sqrt(2./layers_dims[l-1])`. this is named for the first author of He et al., 2015.
-  - ![alt text](./.images/image-24.png)
+  - ![alt text](./images/2402_deeplearning_specialization/image-24.png)
 
 ## C2W2 Optimize Algorithms
 
 - Mini batch
-![alt text](./.images/image-26.png)
+![alt text](./images/2402_deeplearning_specialization/image-26.png)
 - Exponentially Weighted Averages / gradient descent momentum
-![alt text](./.images/image-27.png)
+![alt text](./images/2402_deeplearning_specialization/image-27.png)
 - RMSProp
-![alt text](./.images/image-28.png)
+![alt text](./images/2402_deeplearning_specialization/image-28.png)
 - Adam (Adapt moment estimation) algorithm: combine above
-![alt text](./.images/image-29.png)
+![alt text](./images/2402_deeplearning_specialization/image-29.png)
 
 ---
 **XHU-Note:**
@@ -184,9 +184,9 @@ Regularization Methods (reduce overfitting):
 Hyperparameters Tuning：(systematically)
 
 - add randomness
-![alt text](./.images/image-30.png)
+![alt text](./images/2402_deeplearning_specialization/image-30.png)
 - coarse to fine
-![alt text](./.images/image-31.png)
+![alt text](./images/2402_deeplearning_specialization/image-31.png)
 
 ---
 
@@ -194,13 +194,13 @@ Hyperparameters Tuning：(systematically)
 
 ## C3W1
 
-![alt text](./.images/image-32.png)
+![alt text](./images/2402_deeplearning_specialization/image-32.png)
 
 **distinguish steps, seperating issues**
 
 Human-level error <-> train error <-> dev error
-![alt text](./.images/image-33.png)
-![alt text](./.images/image-34.png)
+![alt text](./images/2402_deeplearning_specialization/image-33.png)
+![alt text](./images/2402_deeplearning_specialization/image-34.png)
 
 ## C3W2
 
@@ -216,9 +216,9 @@ Human-level error <-> train error <-> dev error
 - padding (p) and stribe (s)
 - Conv Layer > Pooling Layer > Dense (Fully connected) Layer
 
-![alt text](./.images/image-35.png)
-![alt text](./.images/image-36.png)
-![alt text](./.images/image-37.png)
+![alt text](./images/2402_deeplearning_specialization/image-35.png)
+![alt text](./images/2402_deeplearning_specialization/image-36.png)
+![alt text](./images/2402_deeplearning_specialization/image-37.png)
 
 numpy.pad
 
@@ -246,31 +246,31 @@ $$n_C = \text{number of filters used in the convolution}$$
 ## C4W2
 
 DeepLearning classic convolution model
-![alt text](./.images/image-38.png)
-![alt text](./.images/image-39.png)
-![alt text](./.images/image-40.png)
+![alt text](./images/2402_deeplearning_specialization/image-38.png)
+![alt text](./images/2402_deeplearning_specialization/image-39.png)
+![alt text](./images/2402_deeplearning_specialization/image-40.png)
 
 Residual Network
-![alt text](./.images/image-41.png)
+![alt text](./images/2402_deeplearning_specialization/image-41.png)
 
 Mobile Net
-![alt text](./.images/image-42.png)
-![alt text](./.images/image-43.png)
+![alt text](./images/2402_deeplearning_specialization/image-42.png)
+![alt text](./images/2402_deeplearning_specialization/image-43.png)
 
 ## C4W3 Object Detection
 
-![alt text](./.images/image-44.png)
-![alt text](./.images/image-45.png)
+![alt text](./images/2402_deeplearning_specialization/image-44.png)
+![alt text](./images/2402_deeplearning_specialization/image-45.png)
 
 Segmentation with U-net
-![alt text](./.images/image-46.png)
-![alt text](./.images/image-47.png)
+![alt text](./images/2402_deeplearning_specialization/image-46.png)
+![alt text](./images/2402_deeplearning_specialization/image-47.png)
 
 ## C4W4 Case Study
 
 ### Face Recognition
 
-![alt text](./.images/image-48.png)
+![alt text](./images/2402_deeplearning_specialization/image-48.png)
 
 **triplet_loss:**
 Implement the triplet loss as defined by formula (3). These are the 4 steps:
@@ -285,33 +285,34 @@ Implement the triplet loss as defined by formula (3). These are the 4 steps:
 ### Netural Style Transfer
 
 $$J(G) = \alpha J_{content}(C,G) + \beta J_{style}(S,G)$$
-![alt text](./.images/image-49.png)
+![alt text](./images/2402_deeplearning_specialization/image-49.png)
 
 $$J_{content}(C,G) =  \frac{1}{4 \times n_H \times n_W \times n_C}\sum _{ \text{all entries}} (a^{(C)} - a^{(G)})^2\tag{1} $$
-![alt text](./.images/image-50.png)
+![alt text](./images/2402_deeplearning_specialization/image-50.png)
 
 $$J_{style}^{[l]}(S,G) = \frac{1}{4 \times {n_C}^2 \times (n_H \times n_W)^2} \sum _{i=1}^{n_C}\sum_{j=1}^{n_C}(G^{(S)}_{(gram)i,j} - G^{(G)}_{(gram)i,j})^2\tag{2} $$
 
 - $G_{gram}^{(S)}$ Gram matrix of the "style" image.
 - $G_{gram}^{(G)}$ Gram matrix of the "generated" image.
 - Make sure you remember that this cost is computed using the hidden layer activations for a particular hidden layer in the network $a^{[l]}$
-![alt text](./.images/image-51.png)
-![alt text](./.images/image-52.png)
+![alt text](./images/2402_deeplearning_specialization/image-51.png)
+![alt text](./images/2402_deeplearning_specialization/image-52.png)
 
 ### Reference Paper
 
-![alt text](./.images/image-53.png)
+![alt text](./images/2402_deeplearning_specialization/image-53.png)
 
 # **C5 - Sequential Model**
 
 ## C5W1 RNN
 
-![alt text](./.images/image-54.png)
-![alt text](./.images/image-58.png)
+![alt text](./images/2402_deeplearning_specialization/image-70.png)
+![alt text](./images/2402_deeplearning_specialization/image-54.png)
+![alt text](./images/2402_deeplearning_specialization/image-58.png)
 
 ### Gated Recurrent Unit (GRU)
 
-![alt text](./.images/image-55.png)
+![alt text](./images/2402_deeplearning_specialization/image-55.png)
 
 ### Overview of gates and states
 
@@ -377,23 +378,23 @@ $$ \mathbf{\Gamma}_o^{\langle t \rangle}=  \sigma(\mathbf{W}_o[\mathbf{a}^{\lang
 
 ### Long Short Term Memoty (LSTM)
 
-![alt text](./.images/image-56.png)
-![alt text](./.images/image-57.png)
+![alt text](./images/2402_deeplearning_specialization/image-56.png)
+![alt text](./images/2402_deeplearning_specialization/image-57.png)
 
 ## C5W2 Natural Languange Process & Word Embedding
 
 feature representation : word embedding
-![alt text](./.images/image-59.png)
-![alt text](./.images/image-61.png)
+![alt text](./images/2402_deeplearning_specialization/image-59.png)
+![alt text](./images/2402_deeplearning_specialization/image-61.png)
 
 ### Sentiment classification
 
-![alt text](./.images/image-60.png)
+![alt text](./images/2402_deeplearning_specialization/image-60.png)
 
 ### Debiasing Word Embedding
 
 The derivation of the linear algebra to do this is a bit more complex. (See Bolukbasi et al., 2016 in the References for details.) Here are the key equations:
-![alt text](./.images/image-62.png)
+![alt text](./images/2402_deeplearning_specialization/image-62.png)
 
 $$ \mu = \frac {e_{w1} + e_{w2}}{2}\tag{4}$$
 
@@ -415,10 +416,10 @@ $$e_2 = e_{w2B}^{corrected} + \mu_{\perp} \tag{12}$$
 
 ## C5W3 Sequence Model & Attention Mechanism
 ### Beam Search
-![alt text](./.images/image-63.png)
+![alt text](./images/2402_deeplearning_specialization/image-63.png)
 ### Bleu Score (Bilingual Evaluation)
 ### Attention Model
-![alt text](./.images/image-64.png)
+![alt text](./images/2402_deeplearning_specialization/image-64.png)
 #### Pre-attention and Post-attention LSTMs on both sides of the attention mechanism
 - There are two separate LSTMs in this model (see diagram on the left): pre-attention and post-attention LSTMs.
 - *Pre-attention* Bi-LSTM is the one at the bottom of the picture is a Bi-directional LSTM and comes *before* the attention mechanism.
@@ -485,8 +486,8 @@ $$context^{<t>} = \sum_{t' = 1}^{T_x} \alpha^{<t,t'>}a^{<t'>}\tag{1}$$
 The encoder-decoder model works quite well with short sentences. The true advantage for the attention model occurs when the input sentence is large.
 
 ## C5W4 Self-Attention
-![alt text](./.images/image-65.png)
-![alt text](./.images/image-66.png)
+![alt text](./images/2402_deeplearning_specialization/image-65.png)
+![alt text](./images/2402_deeplearning_specialization/image-66.png)
 The use of self-attention paired with traditional convolutional networks allows for parallelization which speeds up training. You will implement **scaled dot product attention** which takes in a query, key, value, and a mask as inputs to return rich, attention-based vector representations of the words in your sequence. This type of self-attention can be mathematically expressed as:
 $$
 \text { Attention }(Q, K, V)=\operatorname{softmax}\left(\frac{Q K^{T}}{\sqrt{d_{k}}}+{M}\right) V\tag{4}\
@@ -510,5 +511,5 @@ PE_{(pos, 2i+1)}= cos\left(\frac{pos}{{10000}^{\frac{2i}{d}}}\right)
 $$
 
 ### MultiHead Attention
-![alt text](./.images/image-67.png)
-![alt text](./.images/image-68.png)
+![alt text](./images/2402_deeplearning_specialization/image-67.png)
+![alt text](./images/2402_deeplearning_specialization/image-68.png)
