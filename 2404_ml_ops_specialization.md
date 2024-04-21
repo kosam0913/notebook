@@ -244,7 +244,7 @@ Ref:
 ![alt text](image-26.png)
 ![alt text](image-23.png)
 
-### Collecting,Labeling and Validating Data
+### C2W1 Collecting,Labeling and Validating Data
 
 * Production ML = ML development + software development
   ![alt text](image-24.png)
@@ -316,3 +316,167 @@ Direct Labeling (aka Process Feedback) labels come from monitoring predictions, 
 * ref:<https://developers.google.com/machine-learning/data-prep/construct/collect/label-sources>
 
 #### Validating Data
+
+Data Issues
+
+* drift and skel
+  * data and concept drift
+  * schema skel
+  * distribution skek
+
+| Concept | Description |
+|-------------|-------------|
+| Drift       | Changes in data over time, such as data collected once a day |
+| Skew        | Difference between two static versions or different sources, such as training set and serving set |
+![alt text](image-38.png)
+![alt text](image-39.png)
+
+Detecting data issues
+
+* detecing schema skew
+  * Training and serving data do not conform to the same schema
+* deteching distribution skew
+  * dataset shift -> covariate or concept shift
+  ![alt text](image-40.png)
+
+**data requires continuous evaluation**
+![alt text](image-41.png)
+
+TensorFlow Data Validation
+![alt text](image-42.png)
+
+<https://github.com/cdfoundation/sig-mlops/blob/main/roadmap/2022/MLOpsRoadmap2022.md>
+
+### C2W2 Feature Engineering, Transformation and Seletion
+
+#### Feature Engineering
+
+* Introduction
+  * Squeezing the most out of data
+    * Making data usefulbefore training a model
+    * Representing data in forms that help models learn
+    * Increasing predictive quality
+    * Reducing dimentionalitywith feathre engineering
+  * The art of feature engineering
+    * ![alt text](image-43.png)
+  * How feature engineering is done ina typical ML pipeline
+    * ![alt text](image-45.png)
+  * Feature engineering process
+    * ![alt text](image-44.png)
+
+* Preprocessing Operations
+  * Main preprocessing operations
+    * Data cleansing, Feature tuning, Representation transofmration, Feature extractation, Feature construction
+  * Mapping raw data into features (Vectorizel)
+    * ![alt text](image-46.png)
+  * Mapping numeric values
+  * Mapping catergorical values
+    * ![alt text](image-47.png)
+  * Empirical knowledge of data
+    * Text  - stemming, lemmatization, TF-IDF embedding lookup
+    * Imges- clipping, resizing, cropping, blur, Canny filters, Sober filters
+  ![alt text](image-48.png)
+
+* Techniques
+  * Feature Scaling
+    * Converts values from natural range into a prescribed range. e.g. (0,255) to (-1,1)
+    * Benefits: coverge faster, lower NaN, model learns the right weights
+  * Normalization and Standardization
+    * ![Normalization](image-49.png)
+    * ![Standardization](image-50.png)
+  * Bucketizing / Binning
+  * Other techniques
+    * Dimensionality reduction in embeddig
+    * (TensorFlow embedding projector for high dimension data visualize)
+    * Feature corsses: Combines multiple features together into a new feature(space)/encode same into in fewer features, e.g A, B -> A x B
+    * Feature coding: transforming categorical to a continuous variables
+  ![alt text](image-51.png)
+
+#### Feature Transform in scale
+
+![alt text](image-52.png)
+
+* Preprocessing Data at Scale:
+  ![alt text](image-53.png)
+  * Inconsistancies in feature engineering (important)
+    * traning & serving code paths are different
+    * diverse delopments scenarios: mobile - TF lite, server - TF Serving, Web -TF JS
+    * risk of introducing training-serving skew
+    * skel will lower the performace of your serving model
+  * Preprocssing granularity
+    * ![alt text](image-54.png)
+  * Pre-procssing training dataset
+    |                            | Pre-processing training dataset | Transforming within the model |
+    |----------------------------|---------------------------------|-------------------------------|
+    | Pros                       | - Run-once                       | - Easy iteration              |
+    |                            | - Compute on the entire dataset | - Transformation guarantees   |
+    | Cons                       | - Transformations reproduced at serving | - Slower iteration |
+    |                            | - Ling model latency            | - Expensive transforms       |
+    |                            | - Transformations per batch: skew |                               |
+  * Optimizing instance-level transformations
+    * indirectly affect traning efficiency
+    * typically accelerators sit idle while the CPUs transform
+    * Solutions:
+      * Prefetching transforms for better accelerator efficiency
+  * Sum of Challanegs
+    * Balancing the predictive performace
+    * Full-pass transformations on traning data
+    * Optimizing instance0level transforations for better traning efficiency
+  ![alt text](image-55.png)
+
+* TensorFlow Transform
+  * Benefits of using TensorFlow Transform
+  ![alt text](image-61.png)
+  * Applied feature transformations
+  * tf.Transform Analyzers
+  ![alt text](image-56.png)
+  ![alt text](image-57.png)
+  ![alt text](image-58.png)
+  ![alt text](image-59.png)
+  ![alt text](image-60.png)
+  ![alt text](image-62.png)
+
+**xhu Note**
+<https://www.tensorflow.org/tfx/guide/tft_bestpractices>
+
+#### Feature Selection
+
+* Feature Spaces
+  * Introductions to Feature Space
+    * N dimesional space defined by N features
+    * Not including the target label
+      X = [x1, x2, x3, ..., xN]
+    * Feature space coverage:
+      * Same numerical ranges
+      * Same classes
+      * Similar characteristics for image data
+      * Similar vocabulary, syntax and sematics for NLP data
+    * ![alt text](image-63.png)
+
+* Feature Selection
+  * Why?
+    * identify featues that best represent the data
+    * remove featues that don't influence the outcome
+    * reduce the size of the feature space
+    * resuce the resource requirements and model complexity (IO, storage, and inference costs)
+  * How?
+    * Unsupervised
+      * Feature-target variable relationship NOT considered
+      * Remove redundant features(correlation)
+    * Supervised
+      * Feature-target variable relationship considered
+      * Select features that are most relevant to the target variable
+
+  * Supervised Feature Selection Methods:
+  ![alt text](image-66.png)
+  ![alt text](image-67.png)
+    * Filter Methods: e.g.Pearson correlation
+      Filter methods suffer from inefficiencies as they need to look at all the possible feature subsets.
+      ![alt text](image-64.png)
+    * Wrapper Methods
+      Wrapper methods are based  on the greedy algorithm and thus solutions are slow to compute.
+      ![alt text](image-65.png)
+    * Embedded Methods
+
+**xhu Note**
+<https://www.tensorflow.org/tfx/guide#tfx_pipelines>
