@@ -238,3 +238,81 @@ Ref:
 * <https://papers.nips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf>
 * <http://arxiv.org/abs/2011.09926>
 * <http://arxiv.org/abs/2010.02013>
+
+## C2 Machine Learning Engineering for Production (MLOps) Specialization
+
+![alt text](image-26.png)
+![alt text](image-23.png)
+
+### Collecting,Labeling and Validating Data
+
+* Production ML = ML development + software development
+  ![alt text](image-24.png)
+  ![alt text](image-25.png)
+* Managing the entire life cycle of data
+  * Labeling
+  * Feature space coverage
+  * Minimal dimensionality
+  * Maximum predictive data
+  * Fairness
+  * Rare conditions
+* Modern software development (Criterias)
+  * Scalability
+  * Extensibility
+  * Configuration
+  * Consistency & reproducibility
+  * Safety & security
+  * Modularity
+  * Testability
+  * Monitoring
+* Challenges in production grade ML
+  * Build itergrated ML system
+  * Continuous operate it in production
+  * Handle continuously changing data
+  * Optimize compute resource costs
+
+#### ML Pipelines
+
+![alt text](image-27.png)
+![alt text](image-28.png)
+![alt text](image-29.png)
+![alt text](image-30.png)
+
+#### Collecting Data
+
+data collect > ingest > prepare
+
+* Importance of data quality
+* Data pipeline: data collection, ingestion and preparation
+* Data collection and monitoring
+![alt text](image-31.png)
+
+Key points:
+  ![alt text](image-33.png)
+  ![alt text](image-34.png)
+
+**xhu NOTE**
+
+* Representational harms include perpetuating harmful stereotypes about or minimizing the existence of a social group, such as a racial, ethnic, gender, or religious group. Machine learning algorithms often commit representational harm when they learn patterns from data that have algorithmic bias.
+* Rater categorise: generalist , experts & targer users
+
+#### Labeling Data
+
+* Model performance decays over time, and model retraining helps improve or maintain performance.
+* Data labeling is a key part of supervised learning and needs to be approached based on the specific problem and domain.
+![alt text](image-35.png)
+
+![alt text](image-36.png)
+![alt text](image-37.png)
+
+* Direct Labeling v.s. Derived Labeling (Human raters)
+
+**xhu note**
+Direct Labeling (aka Process Feedback) labels come from monitoring predictions, not from a "rater" as in this example. But what id we don't have data to log?:
+
+* Use a heuristic for a first launch, then train a system based on logged data.
+* Use logs from a similar problem to bootstrap your system.
+* Use human raters to generate data by completing tasks.
+* ref:<https://developers.google.com/machine-learning/data-prep/construct/collect/label-sources>
+
+#### Validating Data
