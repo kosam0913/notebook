@@ -4,19 +4,16 @@
 * Compare and contrast the ML modeling iterative cycle with the cycle for deployment of ML products.
 * List the typical metrics you might track to monitor concept drift.
 
-# Course
+# Course Scope
 
 * C1 Introduction to Machine Learning in Production
-  * C1W1 Week 1: Overview of the ML Lifecycle and Deployment
 * C2 Machine Learning Data Lifesycle in Production
 * C3 Machine Learning Modeling Pipelines in Production
 * C4 Deploying Machine Learning Models in Production
 
-# Note
+# C1 Introduction to Machine Learning in Production
 
-## C1 Introduction to Machine Learning in Production
-
-### Blueprint
+## Blueprint
 
 machine learning project modules
 ![alt text](image-0.png)
@@ -31,9 +28,9 @@ MLOps(Machine Learning Operations): an emerging discipline, and comprises a set 
 Stages: Scoping >> Data >> Modeling >> Deployment
 Iterative: First deployment v.s. Maintainence
 
-### 1. Scoping
+## 1. Scoping
 
-#### Scoping process
+### Scoping process
 
 * Brainstorm business problems(not AI problem)
   * What are the top 3 things you wish were working better?
@@ -61,9 +58,9 @@ Iterative: First deployment v.s. Maintainence
 2. What to achieve > How to achieve
 3. Two dimension coordination system is quite useful to help sorting
 
-### 2. Data
+## 2. Data
 
-#### Define Data and Establish Baseline
+### Define Data and Establish Baseline
 
 Data defination: input X and target label Y
 
@@ -87,7 +84,7 @@ Data defination: input X and target label Y
 
 **xhu note:** different Eng/Proj experiences might only map to one quadrant of above cordination system. (FT ?-> Structured + Big Data)
 
-#### Label and organize data
+### Label and organize data
 
 * Improving label consistancy
   * Have multiple labelers label same example
@@ -101,7 +98,7 @@ Data defination: input X and target label Y
   * Why HLP? Estimate Bayes error / irreducible error to help with error analysis and prioritiaztion
   ![alt text](image-17.png)
 
-#### Obtaining data
+### Obtaining data
 
 * Get into iteration loop as quickly as possible (Unless you have worked on the problem before and have sense of how much data it is need)
 * Ask: How much data can we obtain in k days?
@@ -112,7 +109,7 @@ Data defination: input X and target label Y
   * Don't increase data by more than 10x at a time
   * Label data yourself for a while to get the 'sense'
 
-#### Data pipeline (in iteration)
+### Data pipeline (in iteration)
 
 * Make sure the scripts/data is replicable
 * POC (proof-of-concept) > Production phases:
@@ -123,12 +120,12 @@ Data defination: input X and target label Y
 * Example: **keep track of data provenace and lineage** (using meta data is one of the methods)
     ![alt text](image-20.png)
 
-### 3. Modeling
+## 3. Modeling
 
 AI system = Code (algorithm/model) + Data
 Model-centic AI development v.s. Data-centric AI development
 
-#### Key changllenges
+### Key changllenges
 
 * Model development is an iterative process
   * ![alt text](image-5.png)
@@ -139,7 +136,7 @@ Model-centic AI development v.s. Data-centric AI development
   * Skewed data distribution
   * Accuracy in rare classes
 
-#### Selecting and training model
+### Selecting and training model
 
 * Establish a baseline
   * Establish a baseline level of performace
@@ -153,7 +150,7 @@ Model-centic AI development v.s. Data-centric AI development
   * Sanity-check for code and algorithm
     * overfit a small training dataset before the large one
 
-#### Error analysis
+### Error analysis
 
 * Use tags can help catergoize issue
     ![alt text](image-7.png)
@@ -173,7 +170,7 @@ Skewed dataset : large portion of data is '0'
 ![alt text](image-8.png)
 ![alt text](image-9.png)
 
-#### Performace auditing
+### Performace auditing
 
 Auditing framework
 
@@ -181,7 +178,7 @@ Auditing framework
   * Brainstore what might go wrong
   * Establish metrics
 
-#### Data iteration Loop (during iteration of model)
+### Data iteration Loop (during iteration of model)
 
 **Model-centric view:** Take the data you have and develop a model that does as well as possible > Hold the data fixed and iteratively improve the code/mode
 **Data-centric view:** The quality of the data is paramount. Use tools to improve the data quality; this will allow multiple models to do well > Hold the code fixed and iteratively improve the data
@@ -200,9 +197,9 @@ Example of data augmentation analysis
 
 ![alt text](image-13.png)
 
-### 4. Deployment
+## 4. Deployment
 
-#### Key challenges
+### Key challenges
 
 * Concept drift & Data drift
   * Concept drift: X-> Y mapping drift
@@ -214,7 +211,7 @@ Example of data augmentation analysis
   * Latency, thoughput(QPS: query per seconds - e.g. 500ms)
   * Security and privacy
 
-#### Deployment patterns
+### Deployment patterns
 
 * Common deployment cases:
   * New oriduct/capaibility
@@ -228,7 +225,7 @@ Example of data augmentation analysis
   Human only >> Shadow mode >> AI assistance >> Partial automation >> Full automation
 ![alt text](image-2.png)
 
-#### Monitoring + Maintainance
+### Monitoring + Maintainance
 
 ![alt text](image-3.png)
 ![alt text](image-4.png)
@@ -244,7 +241,7 @@ Ref:
 ![alt text](image-26.png)
 ![alt text](image-23.png)
 
-### C2W1 Collecting,Labeling and Validating Data
+## C2W1 Collecting,Labeling and Validating Data
 
 * Production ML = ML development + software development
   ![alt text](image-24.png)
@@ -271,14 +268,14 @@ Ref:
   * Handle continuously changing data
   * Optimize compute resource costs
 
-#### ML Pipelines
+### ML Pipelines
 
 ![alt text](image-27.png)
 ![alt text](image-28.png)
 ![alt text](image-29.png)
 ![alt text](image-30.png)
 
-#### Collecting Data
+### Collecting Data
 
 data collect > ingest > prepare
 
@@ -296,7 +293,7 @@ Key points:
 * Representational harms include perpetuating harmful stereotypes about or minimizing the existence of a social group, such as a racial, ethnic, gender, or religious group. Machine learning algorithms often commit representational harm when they learn patterns from data that have algorithmic bias.
 * Rater categorise: generalist , experts & targer users
 
-#### Labeling Data
+### Labeling Data
 
 * Model performance decays over time, and model retraining helps improve or maintain performance.
 * Data labeling is a key part of supervised learning and needs to be approached based on the specific problem and domain.
@@ -315,9 +312,9 @@ Direct Labeling (aka Process Feedback) labels come from monitoring predictions, 
 * Use human raters to generate data by completing tasks.
 * ref:<https://developers.google.com/machine-learning/data-prep/construct/collect/label-sources>
 
-#### Validating Data
+### Validating Data
 
-Data Issues
+#### Data Issues
 
 * drift and skel
   * data and concept drift
@@ -331,7 +328,7 @@ Data Issues
 ![alt text](image-38.png)
 ![alt text](image-39.png)
 
-Detecting data issues
+#### Detecting data issues
 
 * detecing schema skew
   * Training and serving data do not conform to the same schema
@@ -347,65 +344,70 @@ TensorFlow Data Validation
 
 <https://github.com/cdfoundation/sig-mlops/blob/main/roadmap/2022/MLOpsRoadmap2022.md>
 
-### C2W2 Feature Engineering, Transformation and Seletion
+## C2W2 Feature Engineering, Transformation and Seletion
 
-#### Feature Engineering
+### Feature Engineering
 
-* Introduction
-  * Squeezing the most out of data
-    * Making data usefulbefore training a model
-    * Representing data in forms that help models learn
-    * Increasing predictive quality
-    * Reducing dimentionalitywith feathre engineering
-  * The art of feature engineering
-    * ![alt text](image-43.png)
-  * How feature engineering is done ina typical ML pipeline
-    * ![alt text](image-45.png)
-  * Feature engineering process
-    * ![alt text](image-44.png)
+#### Introduction
 
-* Preprocessing Operations
-  * Main preprocessing operations
-    * Data cleansing, Feature tuning, Representation transofmration, Feature extractation, Feature construction
-  * Mapping raw data into features (Vectorizel)
-    * ![alt text](image-46.png)
-  * Mapping numeric values
-  * Mapping catergorical values
-    * ![alt text](image-47.png)
-  * Empirical knowledge of data
-    * Text  - stemming, lemmatization, TF-IDF embedding lookup
-    * Imges- clipping, resizing, cropping, blur, Canny filters, Sober filters
+* Squeezing the most out of data
+  * Making data usefulbefore training a model
+  * Representing data in forms that help models learn
+  * Increasing predictive quality
+  * Reducing dimentionalitywith feathre engineering
+* The art of feature engineering
+  * ![alt text](image-43.png)
+* How feature engineering is done ina typical ML pipeline
+  * ![alt text](image-45.png)
+* Feature engineering process
+  * ![alt text](image-44.png)
+
+#### Preprocessing Operations
+
+* Main preprocessing operations
+  * Data cleansing, Feature tuning, Representation transofmration, Feature extractation, Feature construction
+* Mapping raw data into features (Vectorizel)
+  * ![alt text](image-46.png)
+* Mapping numeric values
+* Mapping catergorical values
+  * ![alt text](image-47.png)
+* Empirical knowledge of data
+  * Text  - stemming, lemmatization, TF-IDF embedding lookup
+  * Imges- clipping, resizing, cropping, blur, Canny filters, Sober filters
   ![alt text](image-48.png)
 
-* Techniques
-  * Feature Scaling
-    * Converts values from natural range into a prescribed range. e.g. (0,255) to (-1,1)
-    * Benefits: coverge faster, lower NaN, model learns the right weights
-  * Normalization and Standardization
-    * ![Normalization](image-49.png)
-    * ![Standardization](image-50.png)
-  * Bucketizing / Binning
-  * Other techniques
-    * Dimensionality reduction in embeddig
-    * (TensorFlow embedding projector for high dimension data visualize)
-    * Feature corsses: Combines multiple features together into a new feature(space)/encode same into in fewer features, e.g A, B -> A x B
-    * Feature coding: transforming categorical to a continuous variables
+#### Techniques
+
+* Feature Scaling
+  * Converts values from natural range into a prescribed range. e.g. (0,255) to (-1,1)
+  * Benefits: coverge faster, lower NaN, model learns the right weights
+* Normalization and Standardization
+  * ![Normalization](image-49.png)
+  * ![Standardization](image-50.png)
+* Bucketizing / Binning
+* Other techniques
+  * Dimensionality reduction in embeddig
+  * (TensorFlow embedding projector for high dimension data visualize)
+  * Feature corsses: Combines multiple features together into a new feature(space)/encode same into in fewer features, e.g A, B -> A x B
+  * Feature coding: transforming categorical to a continuous variables
   ![alt text](image-51.png)
 
-#### Feature Transform in scale
+### Feature Transform in scale
 
 ![alt text](image-52.png)
 
-* Preprocessing Data at Scale:
+#### Preprocessing Data at Scale
+
   ![alt text](image-53.png)
-  * Inconsistancies in feature engineering (important)
-    * traning & serving code paths are different
-    * diverse delopments scenarios: mobile - TF lite, server - TF Serving, Web -TF JS
-    * risk of introducing training-serving skew
-    * skel will lower the performace of your serving model
-  * Preprocssing granularity
-    * ![alt text](image-54.png)
-  * Pre-procssing training dataset
+
+* Inconsistancies in feature engineering (important)
+  * traning & serving code paths are different
+  * diverse delopments scenarios: mobile - TF lite, server - TF Serving, Web -TF JS
+  * risk of introducing training-serving skew
+  * skel will lower the performace of your serving model
+* Preprocssing granularity
+  * ![alt text](image-54.png)
+* Pre-procssing training dataset
     |                            | Pre-processing training dataset | Transforming within the model |
     |----------------------------|---------------------------------|-------------------------------|
     | Pros                       | - Run-once                       | - Easy iteration              |
@@ -413,22 +415,23 @@ TensorFlow Data Validation
     | Cons                       | - Transformations reproduced at serving | - Slower iteration |
     |                            | - Ling model latency            | - Expensive transforms       |
     |                            | - Transformations per batch: skew |                               |
-  * Optimizing instance-level transformations
-    * indirectly affect traning efficiency
-    * typically accelerators sit idle while the CPUs transform
-    * Solutions:
-      * Prefetching transforms for better accelerator efficiency
-  * Sum of Challanegs
-    * Balancing the predictive performace
-    * Full-pass transformations on traning data
-    * Optimizing instance0level transforations for better traning efficiency
+* Optimizing instance-level transformations
+  * indirectly affect traning efficiency
+  * typically accelerators sit idle while the CPUs transform
+  * Solutions:
+    * Prefetching transforms for better accelerator efficiency
+* Sum of Challanegs
+  * Balancing the predictive performace
+  * Full-pass transformations on traning data
+  * Optimizing instance0level transforations for better traning efficiency
   ![alt text](image-55.png)
 
-* TensorFlow Transform
-  * Benefits of using TensorFlow Transform
+#### TensorFlow Transform
+
+* Benefits of using TensorFlow Transform
   ![alt text](image-61.png)
-  * Applied feature transformations
-  * tf.Transform Analyzers
+* Applied feature transformations
+* tf.Transform Analyzers
   ![alt text](image-56.png)
   ![alt text](image-57.png)
   ![alt text](image-58.png)
@@ -440,66 +443,75 @@ TensorFlow Data Validation
 
 <https://www.tensorflow.org/tfx/guide/tft_bestpractices>
 
+### Feature Selection
+
+#### Feature Spaces
+
+* Introductions to Feature Space
+  * N dimesional space defined by N features
+  * Not including the target label
+      X = [x1, x2, x3, ..., xN]
+  * Feature space coverage:
+    * Same numerical ranges
+    * Same classes
+    * Similar characteristics for image data
+    * Similar vocabulary, syntax and sematics for NLP data
+  * ![alt text](image-63.png)
+
 #### Feature Selection
 
-* Feature Spaces
-  * Introductions to Feature Space
-    * N dimesional space defined by N features
-    * Not including the target label
-      X = [x1, x2, x3, ..., xN]
-    * Feature space coverage:
-      * Same numerical ranges
-      * Same classes
-      * Similar characteristics for image data
-      * Similar vocabulary, syntax and sematics for NLP data
-    * ![alt text](image-63.png)
+* Why?
+  * identify featues that best represent the data
+  * remove featues that don't influence the outcome
+  * reduce the size of the feature space
+  * resuce the resource requirements and model complexity (IO, storage, and inference costs)
+* How?
+  * Unsupervised
+    * Feature-target variable relationship NOT considered
+    * Remove redundant features(correlation)
+  * Supervised
+    * Feature-target variable relationship considered
+    * Select features that are most relevant to the target variable
 
-* Feature Selection
-  * Why?
-    * identify featues that best represent the data
-    * remove featues that don't influence the outcome
-    * reduce the size of the feature space
-    * resuce the resource requirements and model complexity (IO, storage, and inference costs)
-  * How?
-    * Unsupervised
-      * Feature-target variable relationship NOT considered
-      * Remove redundant features(correlation)
-    * Supervised
-      * Feature-target variable relationship considered
-      * Select features that are most relevant to the target variable
-
-  * Supervised Feature Selection Methods:
+* Supervised Feature Selection Methods:
   ![alt text](image-66.png)
   ![alt text](image-67.png)
-    * Filter Methods: e.g.Pearson correlation
+  * Filter Methods: e.g.Pearson correlation
       Filter methods suffer from inefficiencies as they need to look at all the possible feature subsets.
       ![alt text](image-64.png)
-    * Wrapper Methods
+  * Wrapper Methods
       Wrapper methods are based  on the greedy algorithm and thus solutions are slow to compute.
       ![alt text](image-65.png)
-    * Embedded Methods
+  * Embedded Methods
 
 **xhu Note**
 
 <https://www.tensorflow.org/tfx/guide#tfx_pipelines>
 
-### C2W3 Data Journey and Data Storage
+## C2W3 Data Journey and Data Storage
 
-#### Data Journey
+### Data Journey
 
-* The data journy
-  * Raw features and labels
-  * Input-output map
-  * ML model to learn the map
+#### The data journy
+
+* Raw features and labels
+* Input-output map
+* ML model to learn the map
   ![alt text](image-68.png)
-* Data provenace
+
+#### Data provenace
+
   ![alt text](image-69.png)
-* Data lineage
+
+#### Data lineage
+
   ![alt text](image-70.png)
-* Data versioning
+
+#### Data versioning
+
   ![alt text](image-71.png)
 
-#### ML metadata
+### ML metadata
 
 Metadata: Tracking artifacts and pipeline changes (Using ML metadata to track changes)
 Ordinary ML data pipeline
@@ -516,7 +528,7 @@ Ordinary ML data pipeline
 ![alt text](image-73.png)
 ![alt text](image-74.png)
 
-ML Data
+#### ML Data
 
 * Architecture and nomenclature
 * Tracking metadata flowing between components in pipeline
@@ -540,67 +552,75 @@ An ExecutionType describes a type of component or step in a workflow, and its ru
 * An Association is a record of the relationship between executions and contexts.
 ```
 
-#### Evolving Data
+### Evolving Data
 
-* Schema Development
-  * Schema includes:
-    * Feature name
-    * Feature type: float, int, string, etc.
-    * Required: True/False
-    * Valency: Min, Max, etc.(features with multiple values)
-    * Domain: Categorical, Numerical, Range, etc.
-    * Default value
+#### Schema Development
+
+* Schema includes:
+  * Feature name
+  * Feature type: float, int, string, etc.
+  * Required: True/False
+  * Valency: Min, Max, etc.(features with multiple values)
+  * Domain: Categorical, Numerical, Range, etc.
+  * Default value
       ![alt text](image-77.png)
       ![alt text](image-78.png)
       ![alt text](image-79.png)
       ![alt text](image-80.png)
       ![alt text](image-81.png)
-  * Looking at schema versions to track data evolution
-  * Schema can drive other automated processes
-* Schema Environment
-  * Multiple schema versions -> Version control
-  * Maintraining verieties of schema
+* Looking at schema versions to track data evolution
+* Schema can drive other automated processes
 
-#### Enterprise Data Storage
+#### Schema Environment
 
-* Feature Stores
-  * > A feature store is a central repository for storing documented, curated and access controlled features. Feature stores are valuable centralized feature repositories that reduce redundant work. They are also valuable because they enable teams to share data and discover data that is already available
+* Multiple schema versions -> Version control
+* Maintraining verieties of schema
+
+### Enterprise Data Storage
+
+#### Feature Stores
+
+* > A feature store is a central repository for storing documented, curated and access controlled features. Feature stores are valuable centralized feature repositories that reduce redundant work. They are also valuable because they enable teams to share data and discover data that is already available
   ![alt text](image-82.png)
   ![alt text](image-83.png)
-  * Online v.s. Offline
+* Online v.s. Offline
   ![alt text](image-84.png)
   ![alt text](image-85.png)
-  * Key aspects
-    * Managing feature data from a single person to large enterprises
-    * Scalable and performant access to feature data in training and serving
-    * Provide consistant and point-in-time correct access to feature data
-    * Enable discovery, documentation, and insights into your features
+* Key aspects
+  * Managing feature data from a single person to large enterprises
+  * Scalable and performant access to feature data in training and serving
+  * Provide consistant and point-in-time correct access to feature data
+  * Enable discovery, documentation, and insights into your features
 
-* Data Warehouse
+#### Data Warehouse
+
 Data warehouses are repositories that aggregate data from one or more sources
-  * Some attributes
-    * Aggregates data source
-    * Processed and analyzed
-    * Read optimized
-    * Not real time
-    * Follows schema
-  * Key features
-    * Subject oriented
-    * Integrated
-    * Not volatile (previous data is not changed)
-    * Time variant
-  * Advantages
-    * Enhanced ability to analyze data
-    * Time access to data
-    * Enhanced data quality and consistency
-    * High return on investment
-    * Increased query and system performance
-  * Comparison with databases
+
+* Some attributes
+  * Aggregates data source
+  * Processed and analyzed
+  * Read optimized
+  * Not real time
+  * Follows schema
+* Key features
+  * Subject oriented
+  * Integrated
+  * Not volatile (previous data is not changed)
+  * Time variant
+* Advantages
+  * Enhanced ability to analyze data
+  * Time access to data
+  * Enhanced data quality and consistency
+  * High return on investment
+  * Increased query and system performance
+* Comparison with databases
   ![alt text](image-86.png)
 
-* Data Lakes
+#### Data Lakes
+
 A data lake is a system or repository of data stored in its natural and raw format, which is usually in the form of blobs or files.
-  * Comparison with datawarehouse
+
+* Comparison with datawarehouse
   ![alt text](image-87.png)
 
 **xhu Note**
