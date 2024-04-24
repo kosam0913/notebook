@@ -437,6 +437,7 @@ TensorFlow Data Validation
   ![alt text](image-62.png)
 
 **xhu Note**
+
 <https://www.tensorflow.org/tfx/guide/tft_bestpractices>
 
 #### Feature Selection
@@ -479,4 +480,133 @@ TensorFlow Data Validation
     * Embedded Methods
 
 **xhu Note**
+
 <https://www.tensorflow.org/tfx/guide#tfx_pipelines>
+
+### C2W3 Data Journey and Data Storage
+
+#### Data Journey
+
+* The data journy
+  * Raw features and labels
+  * Input-output map
+  * ML model to learn the map
+  ![alt text](image-68.png)
+* Data provenace
+  ![alt text](image-69.png)
+* Data lineage
+  ![alt text](image-70.png)
+* Data versioning
+  ![alt text](image-71.png)
+
+#### ML metadata
+
+Metadata: Tracking artifacts and pipeline changes (Using ML metadata to track changes)
+Ordinary ML data pipeline
+
+* Data Validation -> Data Transformation
+![alt text](image-72.png)
+
+|         Units                   | Types           | Relationships |
+|----------------------------|-----------------|-----------------|
+| Artifact                       | ArtifactType   | Event            |
+| Execution                     | ExecutionType | Attribution   |
+| Context                        | ContextType   | Association    |
+
+![alt text](image-73.png)
+![alt text](image-74.png)
+
+ML Data
+
+* Architecture and nomenclature
+* Tracking metadata flowing between components in pipeline
+![alt text](image-75.png)
+
+![alt text](image-76.png)
+
+```html
+Data model ref: https://www.tensorflow.org/tfx/guide/mlmd#data_model
+
+The Metadata Store uses the following data model to record and retrieve metadata from the storage backend.
+
+* ArtifactType describes an artifact's type and its properties that are stored in the metadata store. You can register these types on-the-fly with the metadata store in code, or you can load them in the store from a serialized format. Once you register a type, its definition is available throughout the lifetime of the store.
+* An Artifact describes a specific instance of an ArtifactType, and its properties that are written to the metadata store.
+An ExecutionType describes a type of component or step in a workflow, and its runtime parameters.
+* An Execution is a record of a component run or a step in an ML workflow and the runtime parameters. An execution can be thought of as an instance of an ExecutionType. Executions are recorded when you run an ML pipeline or step.
+* An Event is a record of the relationship between artifacts and executions. When an execution happens, events record every artifact that was used by the execution, and every artifact that was produced. These records allow for lineage tracking throughout a workflow. By looking at all events, MLMD knows what executions happened and what artifacts were created as a result. MLMD can then recurse back from any artifact to all of its upstream inputs.
+* A ContextType describes a type of conceptual group of artifacts and executions in a workflow, and its structural properties. For example: projects, pipeline runs, experiments, owners etc.
+* A Context is an instance of a ContextType. It captures the shared information within the group. For example: project name, changelist commit id, experiment annotations etc. It has a user-defined unique name within its ContextType.
+* An Attribution is a record of the relationship between artifacts and contexts.
+* An Association is a record of the relationship between executions and contexts.
+```
+
+#### Evolving Data
+
+* Schema Development
+  * Schema includes:
+    * Feature name
+    * Feature type: float, int, string, etc.
+    * Required: True/False
+    * Valency: Min, Max, etc.(features with multiple values)
+    * Domain: Categorical, Numerical, Range, etc.
+    * Default value
+      ![alt text](image-77.png)
+      ![alt text](image-78.png)
+      ![alt text](image-79.png)
+      ![alt text](image-80.png)
+      ![alt text](image-81.png)
+  * Looking at schema versions to track data evolution
+  * Schema can drive other automated processes
+* Schema Environment
+  * Multiple schema versions -> Version control
+  * Maintraining verieties of schema
+
+#### Enterprise Data Storage
+
+* Feature Stores
+  * > A feature store is a central repository for storing documented, curated and access controlled features. Feature stores are valuable centralized feature repositories that reduce redundant work. They are also valuable because they enable teams to share data and discover data that is already available
+  ![alt text](image-82.png)
+  ![alt text](image-83.png)
+  * Online v.s. Offline
+  ![alt text](image-84.png)
+  ![alt text](image-85.png)
+  * Key aspects
+    * Managing feature data from a single person to large enterprises
+    * Scalable and performant access to feature data in training and serving
+    * Provide consistant and point-in-time correct access to feature data
+    * Enable discovery, documentation, and insights into your features
+
+* Data Warehouse
+Data warehouses are repositories that aggregate data from one or more sources
+  * Some attributes
+    * Aggregates data source
+    * Processed and analyzed
+    * Read optimized
+    * Not real time
+    * Follows schema
+  * Key features
+    * Subject oriented
+    * Integrated
+    * Not volatile (previous data is not changed)
+    * Time variant
+  * Advantages
+    * Enhanced ability to analyze data
+    * Time access to data
+    * Enhanced data quality and consistency
+    * High return on investment
+    * Increased query and system performance
+  * Comparison with databases
+  ![alt text](image-86.png)
+
+* Data Lakes
+A data lake is a system or repository of data stored in its natural and raw format, which is usually in the form of blobs or files.
+  * Comparison with datawarehouse
+  ![alt text](image-87.png)
+
+**xhu Note**
+
+| Terminology     | Description                                                                                             |
+|-----------------|---------------------------------------------------------------------------------------------------------|
+| Feature Store   | A central repository for storing documented, curated, and access-controlled features, specifically for ML. |
+| Data Warehouse  | A subject-oriented repository for structured data optimized for fast read (system used for reporting and data analysis, and is considered a core component of business intelligence) |
+| Data Lake       | A repository of data stored in its natural and raw format.                                                |

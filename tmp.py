@@ -9,7 +9,7 @@ with open(target_file, 'r') as file:
     content = file.read()
 
 # Find all image references in the markdown file
-image_refs = re.findall(r'\!\[.*?\]\((.*?)\)', content)
+image_refs = re.findall(r'/!/[.*?/]/((.*?)/)', content)
 
 for image_ref in image_refs:
     # Get the image file name and its extension
@@ -23,14 +23,26 @@ for image_ref in image_refs:
     os.makedirs(subdir, exist_ok=True)
 
     # Move the image file to the subdirectory
-    new_path = os.path.join(subdir, image_name).replace("\\", "/")
+    new_path = os.path.join(subdir, image_name).replace("//", "/")
     print(new_path)
     shutil.copy(new_image_ref, new_path)
 
     # Replace the image reference in the markdown file with the new path
-    new_path_remove = new_path.replace(note_dir + "/", "\./")
+    new_path_remove = new_path.replace(note_dir + "/", "/./")
     content = content.replace(image_ref, new_path_remove)
 
 # Write the updated content back to the markdown file
 with open(target_file, 'w') as file:
     file.write(content)
+
+
+# rename all files in the directory to lowercase
+from pathlib import Path
+
+input_dir = r"C:/Users/kosam/Documents/Workspace/- xhu_notes/assignments/ml_operation_specialization"
+
+for path in Path(input_dir).rglob('*'):
+    if path.is_file():
+        new_name = path.with_name(path.name.lower())
+        path.rename(new_name)
+        print(f"Renamed: {path} -> {new_name}")
