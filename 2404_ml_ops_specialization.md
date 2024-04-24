@@ -580,7 +580,7 @@ An ExecutionType describes a type of component or step in a workflow, and its ru
 
 #### Feature Stores
 
-* > A feature store is a central repository for storing documented, curated and access controlled features. Feature stores are valuable centralized feature repositories that reduce redundant work. They are also valuable because they enable teams to share data and discover data that is already available
+* A feature store is a central repository for storing documented, curated and access controlled features. Feature stores are valuable centralized feature repositories that reduce redundant work. They are also valuable because they enable teams to share data and discover data that is already available
   ![alt text](image-82.png)
   ![alt text](image-83.png)
 * Online v.s. Offline
