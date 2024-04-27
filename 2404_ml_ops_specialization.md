@@ -630,3 +630,60 @@ A data lake is a system or repository of data stored in its natural and raw form
 | Feature Store   | A central repository for storing documented, curated, and access-controlled features, specifically for ML. |
 | Data Warehouse  | A subject-oriented repository for structured data optimized for fast read (system used for reporting and data analysis, and is considered a core component of business intelligence) |
 | Data Lake       | A repository of data stored in its natural and raw format.                                                |
+
+## C2W4 Advanced Labeling
+
+### Advanced Labeling
+
+Outline:
+
+* Semi-supervised learnig
+* Active learning
+* Weak supervision with Snorkel
+
+Why?
+
+* Manual labeling is expensive
+* Unlabeled data is usually abundant and cheap
+* Unlabeled data contrains useful information that can improve model
+
+* Semi-supervised Learning
+  *Label propagation
+  ![alt text](image-88.png)
+
+* Active Learning
+  ![alt text](image-89.png)
+  ![alt text](image-90.png)
+  ![alt text](image-91.png)
+  ![alt text](image-92.png)
+* Weak supervision
+  Weak supervision is baout leveraging higher-kevek abd/or noisier input from subject matter exports (SMSEs)
+  * Unlabeled data, without ground-truth labels
+  * One or more weak supervision sources
+    * A list of heuristic that can automate labeling
+    * Typically provided by SMEs
+  * Noisy labels have certrain probability of being correct, not 100%
+  * Objective: learn a generative model to determine weights of weak supervision sources
+  * Snorkel
+    ![alt text](image-93.png)
+
+**xhu Note**
+![alt text](image-94.png)
+
+* Semi-supervised learning:
+  * Applied the best of supervised and unsupervised approaches
+  * Using a small amount of labeled data and boosts model accuracy
+* Active Learning:
+  * Selects the most informative data points s(for SME, e.g.human) to label
+  * Improves predictive accuracy
+* Weak Supervision:
+  * Uses heuristics to apply noisy labels to unlabeled examples
+  * Snorkel is handy frameowkr for weak supervision
+
+### Data Augmentation
+
+![alt text](image-95.png)
+
+* It generates artificial data by creating new examples which are variants of the original data
+* It increases the diversity and number of examples in the traning data
+* Provides means to improves accuracy, generalization, and avoiding overfitting
