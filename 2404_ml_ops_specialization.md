@@ -236,7 +236,7 @@ Ref:
 * <http://arxiv.org/abs/2011.09926>
 * <http://arxiv.org/abs/2010.02013>
 
-## C2 Machine Learning Engineering for Production (MLOps) Specialization
+# C2 Machine Learning Engineering for Production (MLOps) Specialization
 
 ![alt text](image-26.png)
 ![alt text](image-23.png)
@@ -631,7 +631,7 @@ A data lake is a system or repository of data stored in its natural and raw form
 | Data Warehouse  | A subject-oriented repository for structured data optimized for fast read (system used for reporting and data analysis, and is considered a core component of business intelligence) |
 | Data Lake       | A repository of data stored in its natural and raw format.                                                |
 
-## C2W4 Advanced Labeling
+## C2W4 Advanced Labeling, Augmentation and Data Preprocessing
 
 ### Advanced Labeling
 
@@ -687,3 +687,7 @@ Why?
 * It generates artificial data by creating new examples which are variants of the original data
 * It increases the diversity and number of examples in the traning data
 * Provides means to improves accuracy, generalization, and avoiding overfitting
+
+# C3 Machine Learning Modeling Pipelines in Production
+
+## C3W1 Neural Architecture Search
