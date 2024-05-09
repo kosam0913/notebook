@@ -690,4 +690,175 @@ Why?
 
 # C3 Machine Learning Modeling Pipelines in Production
 
+![alt text](image-96.png)
+
 ## C3W1 Neural Architecture Search
+
+### Hyperparameter Tuning
+
+* Neural architecture search (NAS) is a technique for automating the design of artificla neural networks
+* It helps finding the optimal architecture
+* This is a search over a huge space of possible architectures
+* AutoML is an algorithm to automate this search
+
+Types of parameters in ML Models
+
+* Trainable parameters:
+  * learned by the algotihm during training
+  * e.g.weights and biases
+* Hyperparameters:
+  * set before launching the learning process
+  * not updated in each training step
+  * e.g.learning rate, batch size, number of unit in dense layers, etc.
+
+![alt text](image-97.png)
+> Keras autotuner: <https://keras.io/api/keras_tuner/>.
+
+```python
+# KerasTuner: comes with Bayesian Optimization, Hyperband, and Random Search algorithms built-in.
+import kerastuner as kt
+from tensorflow import keras
+
+# Define imports
+from kerastuner.engine import base_tuner
+from typing import NamedTuple, Dict, Text, Any, List
+from tfx.components.trainer.fn_args_utils import FnArgs, DataAccessor
+import tensorflow as tf
+import tensorflow_transform as tft
+
+# Declare namedtuple field names
+TunerFnResult = NamedTuple('TunerFnResult', [('tuner', base_tuner.BaseTuner),
+                                             ('fit_kwargs', Dict[Text, Any])])
+
+def model_builder(hp):
+  '''
+  Builds the model and sets up the hyperparameters to tune.
+
+  Args:
+    hp - Keras tuner object
+
+  Returns:
+    model with hyperparameters to tune
+  '''
+
+  # Initialize the Sequential API and start stacking the layers
+  model = keras.Sequential()
+  model.add(keras.layers.Input(shape=(28, 28, 1), name=_IMAGE_KEY))
+  model.add(keras.layers.Flatten())
+
+  # Tune the number of units in the first Dense layer
+  # Choose an optimal value between 32-512
+  hp_units = hp.Int('units', min_value=32, max_value=512, step=32)
+  model.add(keras.layers.Dense(units=hp_units, activation='relu', name='dense_1'))
+
+  # Add next layers
+  model.add(keras.layers.Dropout(0.2))
+  model.add(keras.layers.Dense(10, activation='softmax'))
+
+  # Tune the learning rate for the optimizer
+  # Choose an optimal value from 0.01, 0.001, or 0.0001
+  hp_learning_rate = hp.Choice('learning_rate', values=[1e-2, 1e-3, 1e-4])
+
+  model.compile(optimizer=keras.optimizers.Adam(learning_rate=hp_learning_rate),
+                loss=keras.losses.SparseCategoricalCrossentropy(),
+                metrics=['accuracy'])
+
+  return model
+
+def tuner_fn(fn_args: FnArgs) -> TunerFnResult:
+  """Build the tuner using the KerasTuner API.
+  Args:
+    fn_args: Holds args as name/value pairs.
+
+      - working_dir: working dir for tuning.
+      - train_files: List of file paths containing training tf.Example data.
+      - eval_files: List of file paths containing eval tf.Example data.
+      - train_steps: number of train steps.
+      - eval_steps: number of eval steps.
+      - schema_path: optional schema of the input data.
+      - transform_graph_path: optional transform graph produced by TFT.
+  
+  Returns:
+    A namedtuple contains the following:
+      - tuner: A BaseTuner that will be used for tuning.
+      - fit_kwargs: Args to pass to tuner's run_trial function for fitting the
+                    model , e.g., the training and validation dataset. Required
+                    args depend on the above tuner's implementation.
+  """
+
+  # Define tuner search strategy
+  tuner = kt.Hyperband(model_builder,
+                     objective='val_accuracy',
+                     max_epochs=10,
+                     factor=3,
+                     directory=fn_args.working_dir,
+                     project_name='kt_hyperband')
+
+  # Load transform output
+  tf_transform_output = tft.TFTransformOutput(fn_args.transform_graph_path)
+
+  # Use _input_fn() to extract input features and labels from the train and val set
+  train_set = _input_fn(fn_args.train_files[0], tf_transform_output)
+  val_set = _input_fn(fn_args.eval_files[0], tf_transform_output)
+
+
+  return TunerFnResult(
+      tuner=tuner,
+      fit_kwargs={ 
+          "callbacks":[stop_early],
+          'x': train_set,
+          'validation_data': val_set,
+          'steps_per_epoch': fn_args.train_steps,
+          'validation_steps': fn_args.eval_steps
+      }
+  )
+
+tuner = tfx.components.Tuner(
+    module_file=_tuner_module_file,
+    examples=transform.outputs['transformed_examples'],
+    transform_graph=transform.outputs['transform_graph'],
+    schema=schema_gen.outputs['schema'],
+    train_args=trainer_pb2.TrainArgs(splits=['train'], num_steps=500),
+    eval_args=trainer_pb2.EvalArgs(splits=['eval'], num_steps=100)
+    )
+```
+
+### Automated Machine Learning  (AutoML)
+
+![alt text](image-98.png)
+![alt text](image-99.png)
+![alt text](image-100.png)
+![alt text](image-101.png)
+
+#### Types of Search Spaces
+
+* Macro Architecture Search Space: Contrains individual layers and connection types
+* Micro Architecture Search Space: neural architecture search builds a neural network from cells where each cell is a smaller network
+![alt text](image-102.png)
+![alt text](image-103.png)
+
+#### Search Strageties
+
+* Grid Search
+  * Exhaustive search over a specified parameter grid
+* Random Search
+* Bayesian Optimization
+  ![alt text](image-104.png)
+* Evolutionary Algorithms
+  ![alt text](image-105.png)
+* Reinforcement Learning
+  ![alt text](image-106.png)
+
+#### Measuring AutoML Efficiency
+
+Strategies to reduce the cost:
+
+* Lower fidelity estimates
+  * ![alt text](image-107.png)
+* Learning Curve Extrapolation
+  * ![alt text](image-108.png)
+* Weight Inheritance/Network Morphism
+  * ![alt text](image-109.png)
+
+#### AutoML on the Cloud
+
