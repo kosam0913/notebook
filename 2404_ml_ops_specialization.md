@@ -862,3 +862,511 @@ Strategies to reduce the cost:
 
 #### AutoML on the Cloud
 
+Popular Cloud Offerings:
+
+* Amazon SageMaker Autopilot (Database-ish. sutiabel for multiple use cases for large datasets)
+  * Automatically trains and tunes the best machine learning models for classification or regression based on your data
+  * Key features:
+    * Quick Iteration
+    * High quality models
+    * Performace ranked
+    * Selected features
+    * Notebooks for reproducibility
+  ![alt text](image-110.png)
+* Microsoft Azure Automated Machine Learning
+  * Quick customization: model + control settings
+  * Automated Feature Engineering
+  * Data Visualization
+  * Intelligent stopping
+  * Experiment summaries
+  * Matric visualization
+  * Model Interpretability
+  * Pattern Discovrty
+* Google Cloud AutoML
+  * Accessible to beginners
+  * Train High-quality models
+  * Neatural Architecture Search
+  * Transfer Learning
+  * GUI based
+  * Pipeline life-cycle
+  * Data labeling
+  * Data cleaning
+
+![alt text](image-111.png)
+
+Papers：
+<https://arxiv.org/pdf/1611.01578>
+<https://arxiv.org/pdf/1603.01670>
+<https://arxiv.org/pdf/1808.05377>
+
+## C3W2 Model Resource Management Techniques
+
+### Dimentionality Reduction
+
+Why is high-dimensional data a problem?
+
+* More dimensions -> more features
+* Risk of overfitting
+* Distances grown more similar
+* No clear boundaries between clusters
+* Concentration phenomenon for Euclidean distance
+
+Why are mode feautres a problem?
+
+* Redundant / irrelevant features
+* More noise added than signal
+* Hard to interpret and visualize
+* Hard to store and process data
+![alt text](image-112.png)
+![alt text](image-113.png)
+
+Why reduce dimentionality?
+
+* Storage
+* Computational
+* Consistency
+* Visualization
+
+Major techniques for dimensionality reduction
+
+* Engineering
+  * Feature Engineering
+  ![alt text](image-114.png)
+* Selection
+
+Approches of conduction dimensionality reduction
+
+* Mannually dimensionality reducton
+* Algorithmic dimensionality reducton
+  * Linear dimentionality reduction: project n-dimensional data into a k-dimensional subspace (k<<n)
+  ![alt text](image-115.png)
+    * Principal component analysis (PCA)
+    ![alt text](image-116.png)
+  * More dimensionality reduction algorithms
+    ![alt text](image-117.png)
+    * Singular value decomposition (SVD)
+    * Independent component analysis (ICA)
+      ![alt text](image-118.png)
+    * Non-negative Matrix Factorization (NMF)
+
+**xhu Note**
+Data Science integrates all data generation, data preprocessing and data analysis (mining) techniques. Dimensionality reduction is only a preprocessing step.
+
+1. Principal Component Analysis (PCA) on numerical data.
+2. Single Value Decomposition (SVD) on image data
+3. Non-negative Matrix Factorization (NMF) on text data.
+
+### Quantization & Pruning
+
+* Trends in adoption o smart devices
+* Factors dirving this trend
+  * Demands move ML capabilities from cloud to on-devices
+  * Cost-effitiveness
+  * Compliance with privacy regulations
+
+![alt text](image-119.png)
+![alt text](image-120.png)
+![alt text](image-121.png)
+
+#### Quantization
+
+involves transforming a model into an equivalent representation that uses parameters and computations at a lower precision
+
+e.g. quantizing img
+![alt text](image-122.png)
+
+Why quantize neural networks?
+
+* Neural networks -> more parameters -> take up more space
+* Shrinking model file size
+* Reduce computational resources
+* Make models run faster and use less power with low-precision
+
+Benefits of quantization
+
+* Faster compute
+* Low memory bandwidth
+* Low power
+* Integer operations supported across CPU/DSP/NPUs
+![alt text](image-123.png)
+
+Trade-offs
+![alt text](image-124.png)
+
+* Accuracy
+
+Post-training Quantization
+
+Theoratically can do quantization during or after training
+
+* Post-training quantization: a conversion technique that can reduce model size while also improving CPU and hardware accelerator latency with little degradation in model accuracy -> quantize an already trained TensorFlow model
+  * Float16 is especially useful when you plan to use a GPU > best balanced?
+  ![alt text](image-125.png)
+  * Alternatively, consider using quantization aware training if the loss of accuracy is too great
+
+```python
+import tensorflow as tf
+converter = tf.lite.TFLiteConverter.from_saved_model(saved_model_dir)
+converter.optimizations = [tf.lite.Optimize.OPTIMIZE_FOR_SIZE]
+
+tflite_quat_model = convert.convert()
+```
+
+Quantization Aware Training(QAT)
+
+* Inserts fake quantization nodes in the forward pass
+* Rewrites the graph to emulate quantized inference
+* Reduce the loss of acuracy due to quantization
+* Resulting model contrains all data to be quantized according to spec
+
+![alt text](image-126.png)
+![alt text](image-127.png)
+
+```python
+import tensorflow_model_optimization as tfmot
+
+model = tf.keras.models.Sequential([
+  ...
+])
+
+# Quantize the entire model
+quantize_model = tfmot.quantization.keras.quantize_model(model)
+
+# Continue with training as usual
+quantize_model.compile(...)
+quantize_model.fit(...)
+
+
+# Quantize the parts of the model
+quantize_annotate_layer = tfmot.quantization.keras.quantize_annotate_layer
+model = tf.keras.models.Sequential([
+  ...,
+])
+
+quantize_model = tfmot.quantization.keras.quantize_apply(model)
+
+```
+
+Reference
+<https://blog.tensorflow.org/2020/04/quantization-aware-training-with-tensorflow-model-optimization-toolkit.html>
+
+#### Pruning
+
+to remove parts of the model that did not contribute substantially to producing accurate results > zeroing out insignificant (i.e. low magnitude) weights
+![alt text](image-128.png)
+
+```python
+# Get the pruning method
+prune_low_magnitude = tfmot.sparsity.keras.prune_low_magnitude
+
+# Compute end step to finish pruning after 2 epochs.
+batch_size = 128
+epochs = 2
+validation_split = 0.1 # 10% of training set will be used for validation set. 
+
+num_images = train_images.shape[0] * (1 - validation_split)
+end_step = np.ceil(num_images / batch_size).astype(np.int32) * epochs
+
+# Define pruning schedule.
+pruning_params = {
+      'pruning_schedule': tfmot.sparsity.keras.PolynomialDecay(initial_sparsity=0.50,
+                                                               final_sparsity=0.80,
+                                                               begin_step=0,
+                                                               end_step=end_step)
+}
+
+# Pass in the trained baseline model
+model_for_pruning = prune_low_magnitude(baseline_model, **pruning_params)
+
+# `prune_low_magnitude` requires a recompile.
+model_for_pruning.compile(optimizer='adam',
+              loss='sparse_categorical_crossentropy',
+              metrics=['accuracy'])
+
+model_for_pruning.summary()
+```
+
+Model sparsity
+
+* Larger models -> more parameters -> more memory -> less efficient
+* Sparse models -> less parameters -> less memory -> more efficient
+
+What's special about pruning?
+
+* Better storage and/or transmission
+* Gain speedups in CPU and some ML accelerators
+* Can be used in tandem with quantization to get additional benefits
+* Unlock performance improvements
+
+* The Lottery Ticket Hypothesis <https://arxiv.org/abs/1803.03635>
+![alt text](image-129.png)
+![alt text](image-130.png)
+
+**xhu Note**
+Although pruning can make additional benefits such as improved transmission and gains speed increases in the CPU, there are still significant limitations of this method to solve architectures on a larger scale.
+
+## C3W3 High-Performance Models
+
+### Distributed Training
+
+![alt text](image-131.png)
+
+* Types of distributed training
+  * Data parallelism: In data parallelism, the model is replicated on different accelerators (GPU/CPU) and data is split between them
+  ![alt text](image-132.png)
+  ![alt text](image-133.png)
+  * Model parallelism: When models are too large to fit on a single device then they can be divided into partitions, assigning different partitions to different acceleators
+
+* Distribution Strategy. API e.g. tf.distribute.Strategy
+  * **One Device Strategy**: This strategy is used when you want to run on a single device - no distribution. Typical usage of this strategy is testig your code on a single device before scaling to multiple devices / distribute codes.
+  * **Mirrored Strategy**: This strategy is used when you want to run on multiple GPUs on one machine
+    * Creates a replica per GPU <> Variables are mirrored
+    * Weight updating is done using efficient cros-device communication algorithms (all-reducr algorithms)
+  * **Parameter Server Strategy**: This strategy is used when you want to run on multiple machines. Some machines are designated as workers and some as parameter servers
+    * Parameter servers store variables so that workers can perform computtions on them
+    * Implements asynchronous data parallelism by default
+  * Multi-Worker Mirrored Strategy: This strategy is used when you want to run on multiple machines with multiple GPUs on each machine
+  * Central Storage Strategy
+  * TPU Strategy
+
+![alt text](image-134.png)
+
+### High Performance Models
+
+#### High Performance Ingestion
+
+Why input pipelines?
+
+Accelerators are a key part of high-performance modeling, training, and inference, but accelerators are also expensive, so it's important to use them efficiently > That means keeping them busy, which requires you to supply them with enough data fast enough.
+
+* Full utilization of hardware resources
+
+![alt text](image-135.png)
+![alt text](image-136.png)
+![alt text](image-137.png)
+
+How to optimize pipline performance?
+
+* Prefetching
+  ![alt text](image-138.png)
+* Parallelizing data extraction and transformation
+  * Parallelize data extraction
+    * Perfer local storage as it takes significantly less time than read data from remote storage
+    * Maximize the aggregate badwidth of the remote storage by reading more files
+    ![alt text](image-139.png)
+  * Parallelize data transformation
+    * Post data loading, the inputs may need preprocessing
+    * Element-wise preprocessing can be parallelized accross CPU cores
+    * The optimal value for the level of parallelism depends on:
+      * Size of the data
+      * Cost of the transformation
+      * Number of CPU cores
+    * Use tf.data.experimental.AUTOTUNE to automatically tune the level of parallelism
+* Caching
+  * In memory: tf.data.Dataset.cache()
+  * Disk: tf.data.Dataset.cache(filename=)
+  ![alt text](image-140.png)
+* Reduce memory
+
+#### High Performance Modelling
+
+![alt text](image-141.png)
+![alt text](image-142.png)
+![alt text](image-143.png)
+
+Ref:
+<https://arxiv.org/abs/1811.06965>
+
+### Knowledge Distillation
+
+Why knowledge distillation? -> Sophisticated models and their problems
+
+* Larger sophisticated models become complex
+* Complex models learn complex tasks
+* Can we express this learning more efficiently?
+
+To distill or concertrate this complexity into smaller networks
+
+![alt text](image-144.png)
+
+Teacher-student model
+
+```python
+class Distiller(keras.Model):
+
+  # Needs both the student and teacher models to create an instance of this class
+  def __init__(self, student, teacher):
+      super(Distiller, self).__init__()
+      self.teacher = teacher
+      self.student = student
+
+
+  # Will be used when calling model.compile()
+  def compile(self, optimizer, metrics, student_loss_fn,
+              distillation_loss_fn, alpha, temperature):
+
+      # Compile using the optimizer and metrics
+      super(Distiller, self).compile(optimizer=optimizer, metrics=metrics)
+      
+      # Add the other params to the instance
+      self.student_loss_fn = student_loss_fn
+      self.distillation_loss_fn = distillation_loss_fn
+      self.alpha = alpha
+      self.temperature = temperature
+
+
+  # Will be used when calling model.fit()
+  def train_step(self, data):
+      # Data is expected to be a tuple of (features, labels)
+      x, y = data
+
+      # Vanilla forward pass of the teacher
+      # Note that the teacher is NOT trained
+      teacher_predictions = self.teacher(x, training=False)
+
+      # Use GradientTape to save gradients
+      with tf.GradientTape() as tape:
+          # Vanilla forward pass of the student
+          student_predictions = self.student(x, training=True)
+
+          # Compute vanilla student loss
+          student_loss = self.student_loss_fn(y, student_predictions)
+          
+          # Compute distillation loss
+          # Should be KL divergence between logits softened by a temperature factor
+          distillation_loss = self.distillation_loss_fn(
+              tf.nn.softmax(teacher_predictions / self.temperature, axis=1),
+              tf.nn.softmax(student_predictions / self.temperature, axis=1))
+
+          # Compute loss by weighting the two previous losses using the alpha param
+          loss = self.alpha * student_loss + (1 - self.alpha) * distillation_loss
+
+      # Use tape to calculate gradients for student
+      trainable_vars = self.student.trainable_variables
+      gradients = tape.gradient(loss, trainable_vars)
+
+      # Update student weights 
+      # Note that this done ONLY for the student
+      self.optimizer.apply_gradients(zip(gradients, trainable_vars))
+
+      # Update the metrics
+      self.compiled_metrics.update_state(y, student_predictions)
+
+      # Return a performance dictionary
+      # You will see this being outputted during training
+      results = {m.name: m.result() for m in self.metrics}
+      results.update({"student_loss": student_loss, "distillation_loss": distillation_loss})
+      return results
+
+
+  # Will be used when calling model.evaluate()
+  def test_step(self, data):
+      # Data is expected to be a tuple of (features, labels)
+      x, y = data
+
+      # Use student to make predictions
+      # Notice that the training param is set to False
+      y_prediction = self.student(x, training=False)
+
+      # Calculate student's vanilla loss
+      student_loss = self.student_loss_fn(y, y_prediction)
+
+      # Update the metrics
+      self.compiled_metrics.update_state(y, y_prediction)
+
+      # Return a performance dictionary
+      # You will see this being outputted during inference
+      results = {m.name: m.result() for m in self.metrics}
+      results.update({"student_loss": student_loss})
+      return results
+
+```
+
+Techniques
+
+* Approach #1: **Weight objectives** (student and teacher) and combine during backprop
+* Approach #2: **Compare distributions** of the preductions (student and teacher) using KL divergence
+
+![alt text](image-145.png)
+![alt text](image-146.png)
+
+![alt text](image-147.png)
+
+![alt text](image-148.png)
+
+Paper:
+
+<https://arxiv.org/pdf/1503.02531>
+
+## C3W4 Model Analysis
+
+Black box v.s. Model introspection
+![alt text](image-149.png)
+![alt text](image-150.png)
+
+### Model Analysis & Debugging
+
+#### TensorFlow Model Analysis (TFMA)
+
+![alt text](image-151.png)
+
+<https://blog.tensorflow.org/2018/03/introducing-tensorflow-model-analysis.html>
+<https://www.tensorflow.org/tfx/model_analysis/architecture>
+
+#### Model Debugging Techniques
+
+* Benchmark models
+* Sensitivity analysis
+  * Random Attacks
+  * Partial Dependence Plots: visualie the effects of changing one or more variables in your model (open source pkgs: PDPbox and pyCEbox)
+* Residual analysis: a subset of a larger class of approaches to prevent social discrimination and other problems that ML prodcutioon systems usually face.
+
+Data slicing in this context will help you understand when discrimination is happening. You need to go one step further to actually address it.
+
+#### Model Remediation
+
+Data augmentation:
+
+* Adding synthetic data to the training set
+* Helps correct for unbalanced training data
+
+Interpretable and explainable ML:
+
+* Overcome the black box problem
+* Helps understand the model's decision-making process
+
+#### Model Fairness
+
+* True positive rate (TPR)
+* False positive rate (FPR)
+* True negative rate (TNR)
+* False negative rate (FNR)
+* Accuracy & Area under the curve (AUC)
+
+#### Continuous Evaluation and Monitoring
+
+<https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/>
+
+contingency table -> If the data is stationary these quantities should not change over time
+
+![alt text](image-152.png)
+
+## C3W5 Explainable AI
+
+![alt text](image-153.png)
+Paper:
+<https://arxiv.org/pdf/1910.10045>
+
+Book:
+<https://christophm.github.io/interpretable-ml-book/index.html>
+
+Interpretation methods can be grouped based on
+
+* model specific, or model agnostic
+* intrinsic or post-hoc
+* local or global
+
+Model Agnostic Methods
+
+* Partial Dependence Plots (PDPs)
+![alt text](image-154.png)
