@@ -1370,3 +1370,34 @@ Model Agnostic Methods
 
 * Partial Dependence Plots (PDPs)
 ![alt text](image-154.png)
+
+# C4 Deploying Machine Learning Models in Production
+
+## C4W1 Introduction to MLOps
+
+### Model Serving
+
+Three key components of model serving:
+
+* Model itself
+* Interpreter for the execution
+* Input data
+
+Important Metrics:
+
+* Metric to Optimize:
+  * Latency
+  * Throughput
+  * Cost
+
+Cost control, may include reducing costs by:
+
+* sharing assets like GPU's
+* using multiple models to increase throughput
+* exploring optimizing your models
+
+NoSQL solutions for implementing caching and feature lookup
+
+* Google Cloud Firestore
+* Amazon DynamoDB
+* Google Cloud Memorystore
