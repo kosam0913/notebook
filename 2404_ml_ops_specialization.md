@@ -236,6 +236,71 @@ Ref:
 * <http://arxiv.org/abs/2011.09926>
 * <http://arxiv.org/abs/2010.02013>
 
+## C1 References
+
+This is a compilation of resources including URLs and papers appearing in lecture videos.
+
+Overall resources:
+
+Konstantinos, Katsiapis, Karmarkar, A., Altay, A., Zaks, A., Polyzotis, N., … Li, Z. (2020). Towards ML Engineering: A brief history of TensorFlow Extended (TFX).
+<http://arxiv.org/abs/2010.02013>
+
+Paleyes, A., Urma, R.-G., & Lawrence, N. D. (2020). Challenges in deploying machine learning: A survey of case studies.
+<http://arxiv.org/abs/2011.09926>
+
+Week 1: Overview of the ML Lifecycle and Deployment
+Concept and Data Drift
+<https://towardsdatascience.com/machine-learning-in-production-why-you-should-care-about-data-and-concept-drift-d96d0bc907fb>
+
+Monitoring ML Models
+<https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/>
+
+A Chat with Andrew on MLOps: From Model-centric to Data-centric AI:
+<https://youtu.be/06-AZXmwHjo>
+
+Konstantinos, Katsiapis, Karmarkar, A., Altay, A., Zaks, A., Polyzotis, N., … Li, Z. (2020). Towards ML Engineering: A brief history of TensorFlow Extended (TFX).
+<http://arxiv.org/abs/2010.02013>
+
+Paleyes, A., Urma, R.-G., & Lawrence, N. D. (2020). Challenges in deploying machine learning: A survey of case studies.
+<http://arxiv.org/abs/2011.09926>
+
+Sculley, D., Holt, G., Golovin, D., Davydov, E., & Phillips, T. (n.d.). Hidden technical debt in machine learning systems. Retrieved April 28, 2021, from Nips.cc
+
+<https://papers.nips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf>
+
+Week 2: Select and Train Model
+Establishing a baseline
+<https://blog.ml.cmu.edu/2020/08/31/3-baselines/>
+
+Error analysis
+<https://techcommunity.microsoft.com/t5/azure-ai/responsible-machine-learning-with-error-analysis/ba-p/2141774>
+
+Experiment tracking
+<https://neptune.ai/blog/ml-experiment-tracking>
+
+Brundage, M., Avin, S., Wang, J., Belfield, H., Krueger, G., Hadfield, G., … Anderljung, M. (n.d.). Toward trustworthy AI development: Mechanisms for supporting verifiable claims∗. Retrieved May 7, 2021
+
+<http://arxiv.org/abs/2004.07213v2>
+
+Nakkiran, P., Kaplun, G., Bansal, Y., Yang, T., Barak, B., & Sutskever, I. (2019). Deep double descent: Where bigger models and more data hurt. Retrieved from
+<http://arxiv.org/abs/1912.02292>
+
+Week 3: Data Definition and Baseline
+Label ambiguity
+
+<https://arxiv.org/pdf/1706.06969.pdf>
+
+Data pipelines
+<https://cs230.stanford.edu/blog/datapipeline/>
+
+Data lineage
+<https://blog.tensorflow.org/2021/01/ml-metadata-version-control-for-ml.html>
+
+MLops
+<https://cloud.google.com/blog/products/ai-machine-learning/key-requirements-for-an-mlops-foundation>
+
+Geirhos, R., Janssen, D. H. J., Schutt, H. H., Rauber, J., Bethge, M., & Wichmann, F. A. (n.d.). Comparing deep neural networks against humans: object recognition when the signal gets weaker∗. Retrieved May 7, 2021, from Arxiv.org website:
+
 # C2 Machine Learning Engineering for Production (MLOps) Specialization
 
 ![alt text](image-26.png)
@@ -687,6 +752,122 @@ Why?
 * It generates artificial data by creating new examples which are variants of the original data
 * It increases the diversity and number of examples in the traning data
 * Provides means to improves accuracy, generalization, and avoiding overfitting
+
+## C2 References
+
+Overall resources:
+Konstantinos, Katsiapis, Karmarkar, A., Altay, A., Zaks, A., Polyzotis, N., … Li, Z. (2020). Towards ML Engineering: A brief history of TensorFlow Extended (TFX).
+<http://arxiv.org/abs/2010.02013>
+
+Paleyes, A., Urma, R.-G., & Lawrence, N. D. (2020). Challenges in deploying machine learning: A survey of case studies.
+<http://arxiv.org/abs/2011.09926>
+
+Week 1: Collecting, Labeling and Validating Data
+ML code fraction:
+
+MLops
+
+Data 1st class citizen
+
+Runners app
+
+Rules of ML
+
+Bias in datasets
+
+Logstash
+
+Fluentd
+
+Google Cloud Logging
+
+AWS ElasticSearch
+
+Azure Monitor
+
+TFDV
+
+Chebyshev distance
+
+Sculley, D., Holt, G., Golovin, D., Davydov, E., & Phillips, T. (n.d.). Hidden technical debt in machine learning systems. Retrieved April 28, 2021, from Nips.cc
+<https://papers.nips.cc/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf>
+
+Week 2: Feature Engineering, Transformation and Selection
+Mapping raw data into feature
+
+Feature engineering techniques
+<https://developers.google.com/machine-learning/crash-course/representation/feature-engineering>
+
+Facets
+
+Embedding projector
+
+Encoding features
+
+TFX:
+
+<https://www.tensorflow.org/tfx/guide#tfx_pipelines>
+
+<https://ai.googleblog.com/2017/02/preprocessing-for-machine-learning-with.html>
+
+Breast Cancer Dataset
+
+Week 3: Data Journey and Data Storage
+Data Versioning:
+
+<https://dvc.org/>
+
+<https://git-lfs.github.com/>
+
+ML Metadata:
+
+<https://www.tensorflow.org/tfx/guide/mlmd#data_model>
+
+<https://www.tensorflow.org/tfx/guide/understanding_custom_components>
+
+Chicago taxi trips data set:
+
+<https://data.cityofchicago.org/Transportation/Taxi-Trips/wrvz-psew/data>
+
+<https://archive.ics.uci.edu/ml/datasets/covertype>
+
+Feast:
+
+<https://cloud.google.com/blog/products/ai-machine-learning/introducing-feast-an-open-source-feature-store-for-machine-learning>
+
+<https://github.com/feast-dev/feast>
+
+<https://blog.gojekengineering.com/feast-bridging-ml-models-and-data-efd06b7d1644>
+
+Week 4: Advanced Labeling, Augmentation and Data Preprocessing
+Hand Labeling
+
+Weak supervision
+
+Snorkel
+
+How do you get more data?
+
+Advanced Techniques
+
+Images in tensorflow
+
+CIFAR-10
+
+<https://www.cs.toronto.edu/~kriz/cifar.html>
+
+<https://www.tensorflow.org/datasets/catalog/cifar10>
+
+Weather dataset
+
+Human Activity Recognition
+
+Papers
+
+Label Propagation:
+
+Iscen, A., Tolias, G., Avrithis, Y., & Chum, O. (2019). Label propagation for deep semi-supervised learning.
+<https://arxiv.org/pdf/1904.04717.pdf>
 
 # C3 Machine Learning Modeling Pipelines in Production
 
@@ -1370,6 +1551,331 @@ Model Agnostic Methods
 
 * Partial Dependence Plots (PDPs)
 ![alt text](image-154.png)
+
+## C3 Reference
+
+Overall resources:
+
+Towards ML Engineering - History of TFX:
+
+<https://arxiv.org/abs/2010.02013>
+
+Challenges in Deploying ML:
+
+<https://arxiv.org/abs/2011.09926>
+
+Week 1: Neural Architecture Search
+Neural Architecture Search:
+
+<https://arxiv.org/pdf/1808.05377.pdf>
+
+Bayesian Optimization:
+
+<https://distill.pub/2020/bayesian-optimization/>
+
+Neural Architecture Search with Reinforcement Learning:
+
+<https://arxiv.org/pdf/1611.01578.pdf>
+
+Progressive Neural Architecture Search:
+
+<https://arxiv.org/pdf/1712.00559.pdf>
+
+Network Morphism:
+
+<https://arxiv.org/abs/1603.01670>
+
+Amazon SageMaker Autopilot
+
+<https://aws.amazon.com/sagemaker/autopilot>
+
+Microsoft Azure Automated Machine Learning
+
+<https://azure.microsoft.com/en-in/services/machine-learning/automatedml/>
+
+Google Cloud AutoML
+
+<https://cloud.google.com/automl>
+
+Week 2: Model Resource Management Techniques
+High dimensional spaces visualization:
+
+<https://colab.research.google.com/drive/1GTBYAcMsiKDDQeDpyOIi_DGuPVleJAf0?usp=sharing>
+
+Word embeddings:
+
+<https://heartbeat.fritz.ai/coreml-with-glove-word-embedding-and-recursive-neural-network-part-2-d72c1a66b028>
+
+Curse of dimensionality:
+
+<https://builtin.com/data-science/curse-dimensionality>
+
+<https://www.visiondummy.com/2014/04/curse-dimensionality-affect-classification/>
+
+Sparsity:
+
+<https://www.kdd.org/exploration_files/parsons.pdf>
+
+Feature engineering:
+
+<https://quantdare.com/what-is-the-difference-between-feature-extraction-and-feature-selection/>
+
+<https://machinelearningmastery.com/discover-feature-engineering-how-to-engineer-features-and-how-to-get-good-at-it/>
+
+PCA:
+
+<https://scikit-learn.org/stable/modules/decomposition.html>
+
+<https://www.coursera.org/lecture/machine-learning/principal-component-analysis-problem-formulation-GBFTt>
+
+<https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579>
+
+<https://elitedatascience.com/dimensionality-reduction-algorithms>
+
+ICA:
+
+<https://scikit-learn.org/stable/modules/decomposition.html>
+
+<https://scikit-learn.org/stable/auto_examples/decomposition/plot_ica_vs_pca.html>
+
+NMF:
+
+<https://scikit-learn.org/stable/modules/decomposition.html#non-negative-matrix-factorization-nmf-or-nnmf>
+
+Mobile model deployment:
+
+<https://developers.google.com/ml-kit>
+
+<https://www.tensorflow.org/lite>
+
+Quantization:
+
+<https://www.qualcomm.com/news/onq/2019/03/12/heres-why-quantization-matters-ai>
+
+<https://petewarden.com/2016/05/03/how-to-quantize-neural-networks-with-tensorflow/>
+
+<https://arxiv.org/abs/1712.05877>
+
+<https://blog.tensorflow.org/2020/04/quantization-aware-training-with-tensorflow-model-optimization-toolkit.html>
+
+<https://www.tensorflow.org/lite/performance/best_practices>
+
+Post-training quantization:
+
+<https://medium.com/tensorflow/introducing-the-model-optimization-toolkit-for-tensorflow-254aca1ba0a3>
+
+Quantization aware training:
+
+<https://blog.tensorflow.org/2020/04/quantization-aware-training-with-tensorflow-model-optimization-toolkit.html>
+
+Pruning:
+
+<https://blog.tensorflow.org/2019/05/tf-model-optimization-toolkit-pruning-API.html>
+
+<http://yann.lecun.com/exdb/publis/pdf/lecun-90b.pdf>
+
+<https://towardsdatascience.com/can-you-remove-99-of-a-neural-network-without-losing-accuracy-915b1fab873b>
+
+<https://arxiv.org/abs/1803.03635>
+
+<https://numenta.com/blog/2019/08/30/case-for-sparsity-in-neural-networks-part-1-pruning>
+
+<https://www.tensorflow.org/model_optimization/guide/pruning>
+
+Week 3: High Performance Modeling
+Distribution strategies:
+
+<https://www.tensorflow.org/guide/distributed_training>
+
+Changes in data parallelism:
+
+<https://arxiv.org/abs/1806.03377>
+
+Pipeline parallelism:
+
+<https://ai.googleblog.com/2019/03/introducing-gpipe-open-source-library.html>
+
+GPipe:
+
+<https://github.com/tensorflow/lingvo/blob/master/lingvo/core/gpipe.py>
+
+<https://arxiv.org/abs/1811.06965>
+
+GoogleNet:
+
+<https://arxiv.org/abs/1409.4842>
+
+Knowledge distillation:
+
+<https://ai.googleblog.com/2018/05/custom-on-device-ml-models.html>
+
+<https://arxiv.org/pdf/1503.02531.pdf>
+
+<https://nervanasystems.github.io/distiller/knowledge_distillation.html>
+
+DistilBERT:
+
+<https://blog.tensorflow.org/2020/05/how-hugging-face-achieved-2x-performance-boost-question-answering.html>
+
+Two-stage multi-teacher distillation for Q & A:
+
+<https://arxiv.org/abs/1910.08381>
+
+EfficientNets:
+
+<https://arxiv.org/abs/1911.04252>
+
+Week 4: Model Performance Analysis
+TensorBoard:
+
+<https://blog.tensorflow.org/2019/12/introducing-tensorboarddev-new-way-to.html>
+
+Model Introspection:
+
+<https://www.kaggle.com/c/dogs-vs-cats/data>
+
+Optimization process:
+
+<https://cs231n.github.io/neural-networks-3/>
+
+TFMA architecture:
+
+<https://www.tensorflow.org/tfx/model_analysis/architecture>
+
+TFMA:
+
+<https://blog.tensorflow.org/2018/03/introducing-tensorflow-model-analysis.html>
+
+Aggregate versus slice metrics:
+
+<https://blog.tensorflow.org/2018/03/introducing-tensorflow-model-analysis.html>
+
+What-if tool:
+
+<https://pair-code.github.io/what-if-tool/>
+
+<https://www.google.com/url?q=https://www.youtube.com/playlist?list%3DPLIivdWyY5sqK7Z5A2-sftWLlbVSXuyclr&sa=D&source=editors&ust=1620676474220000&usg=AFQjCNEF_ONMs8YkdUtgUp2-stfKmDdWtA>
+
+Partial Dependence Plots:
+
+<https://github.com/SauceCat/PDPbox>
+
+<https://github.com/AustinRochford/PyCEbox>
+
+Adversarial attacks:
+
+<http://karpathy.github.io/2015/03/30/breaking-convnets/>
+
+<https://arxiv.org/pdf/1707.08945.pdf>
+
+Informational and behavioral harms:
+
+<https://fpf.org/wp-content/uploads/2019/09/FPF_WarningSigns_Report.pdf>
+
+Clever Hans:
+
+<https://github.com/cleverhans-lab/cleverhans>
+
+Foolbox:
+
+<https://foolbox.jonasrauber.de/>
+
+Defensive distillation:
+
+<https://arxiv.org/abs/1511.04508>
+
+Concept Drift detection for Unsupervised Learning:
+
+<https://arxiv.org/pdf/1704.00023.pdf>
+
+Cloud providers:
+
+<https://cloud.google.com/ai-platform/prediction/docs/continuous-evaluation>
+
+<https://aws.amazon.com/sagemaker/model-monitor>
+
+<https://docs.microsoft.com/en-us/azure/machine-learning/how-to-monitor-datasets>
+
+Fairness:
+
+<https://www.tensorflow.org/responsible_ai/fairness_indicators/guide>
+
+Model Remediation:
+
+<https://www.tensorflow.org/responsible_ai/model_remediation>
+
+AIF360:
+
+<http://aif360.mybluemix.net/>
+
+Themis ML:
+
+<https://github.com/cosmicBboy/themis-ml>
+
+LFR:
+
+<https://arxiv.org/pdf/1904.13341.pdf>
+
+Week 5: Explainability
+Fooling DNNs:
+
+<https://arxiv.org/pdf/1607.02533.pdf>
+
+<https://arxiv.org/pdf/1412.6572.pdf>
+
+XAI:
+
+<http://www.cs.columbia.edu/~orb/papers/xai_survey_paper_2017.pdf>
+
+Interpretable models
+
+<https://christophm.github.io/interpretable-ml-book/>
+
+<https://www.tensorflow.org/lattice>
+
+Dol bear law:
+
+<https://en.wikipedia.org/wiki/Dolbear%27s_law>
+
+TensorFlow Lattice:
+
+<https://www.tensorflow.org/lattice>
+
+<https://jmlr.org/papers/volume17/15-243/15-243.pdf>
+
+PDP:
+
+<https://github.com/SauceCat/PDPbox>
+
+<https://scikit-learn.org/stable/auto_examples/inspection/plot_partial_dependence.html>
+
+Permutation Feature Importance:
+
+<http://arxiv.org/abs/1801.01489>
+
+Shapley values:
+
+<https://en.wikipedia.org/wiki/Shapley_value>
+
+SHAP:
+
+<https://github.com/slundberg/shap>
+
+TCAV:
+
+<https://arxiv.org/pdf/1711.11279.pdf>
+
+LIME:
+
+<https://github.com/marcotcr/lime>
+
+Google Cloud XAI
+
+<https://storage.googleapis.com/cloud-ai-whitepapers/AI%20Explainability%20Whitepaper.pdf>
+
+Integrated gradients:
+
+<https://arxiv.org/pdf/1703.01365.pdf>
 
 # C4 Deploying Machine Learning Models in Production
 
