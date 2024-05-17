@@ -1907,3 +1907,60 @@ NoSQL solutions for implementing caching and feature lookup
 * Google Cloud Firestore
 * Amazon DynamoDB
 * Google Cloud Memorystore
+
+<https://www.tensorflow.org/tfx/tutorials/serving/rest_simple>
+
+## C4W2 Model Serving Architecture
+
+### Online Inference
+
+![alt text](image-155.png)
+
+* Infrastrucutre
+* Model Architecture
+* Model Compilation
+![alt text](image-158.png)
+
+Cached data
+![alt text](image-159.png)
+![alt text](image-156.png)
+
+### Data Preprocessing
+
+![alt text](image-160.png)
+
+### Batch Inference
+
+ETL pipelines
+
+* To extract data from data sources, transforming, and loading it into an output destination.
+* The results of the ETL workflow are stored in a database and the results are a lower latency and higher throughput of data processing.
+
+![alt text](image-157.png)
+
+## C4W3 ML Experiments Management and Workflow Automation
+
+Experiments tracking notebook tools:
+
+* Nbdime
+* Nbconvert
+* Jupytext
+
+Data Versioning:
+
+* Neptune
+* Pachyderm
+* OpenRefine
+
+### MLOps Methodologies
+
+![alt text](image-161.png)
+![alt text](image-162.png)
+![alt text](image-163.png)
+
+MLOps:
+<https://neptune.ai/blog/mlops>
+<https://github.com/visenger/awesome-mlops>
+
+<https://cloud.google.com/architecture/architecture-for-mlops-using-tfx-kubeflow-pipelines-and-cloud-build>
+![alt text](image-164.png)
