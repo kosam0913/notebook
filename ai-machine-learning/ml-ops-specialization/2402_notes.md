@@ -16,10 +16,10 @@
 ## Blueprint
 
 machine learning project modules
-![alt text](./images/2404_ml_ops_specialization/image-0.png)
+![alt text](./images/image-0.png)
 
 machine learning project lifecycle
-![alt text](./images/2404_ml_ops_specialization/image-1.png)
+![alt text](./images/image-1.png)
 
 Three parts are equally important: Code + Hyperparamters + Data >> ML Model
 
@@ -37,11 +37,11 @@ Iterative: First deployment v.s. Maintainence
 * Brainstorm AI solutions
 * Assess the feasibility (dilligence): is it technically feasible?
   * Use external benchmark to evaluate(literature, other company, competitor)
-  ![alt text](./images/2404_ml_ops_specialization/image-21.png)
+  ![alt text](./images/image-21.png)
   * Do we have features that are predictive?
   * The history of the project
   * Dilligence on value (Fermi estimates)
-  ![alt text](./images/2404_ml_ops_specialization/image-22.png)
+  ![alt text](./images/image-22.png)
 * Assess potential solutions
 * Determinate milestones
   * Key specifications:
@@ -65,7 +65,7 @@ Iterative: First deployment v.s. Maintainence
 Data defination: input X and target label Y
 
 * Major type of data problems
-  ![alt text](./images/2404_ml_ops_specialization/image-14.png)
+  ![alt text](./images/image-14.png)
   * Unstructured adata:
     * May or may not have huge collection of unalbeled exmpales x.
     * Human can label more data
@@ -75,7 +75,7 @@ Data defination: input X and target label Y
     * Human labeling may not be possible
   * Small data:
     * Clean labels are critical
-    ![alt text](./images/2404_ml_ops_specialization/image-15.png)
+    ![alt text](./images/image-15.png)
     * Can manually lookthrough dataset and fix labels
     * Can get all the labelers to talk to each others
   * Big Data:
@@ -92,18 +92,18 @@ Data defination: input X and target label Y
   * If labelers believe that x does NOT contrain enough information, consider changing x
   * Iterate until it is hard to significate improve the data
   * Have a class/label to capture uncertainty: 0 , borderline, 1
-  * ![alt text](./images/2404_ml_ops_specialization/image-16.png)
+  * ![alt text](./images/image-16.png)
 
 * Human level performance (HLP)
   * Why HLP? Estimate Bayes error / irreducible error to help with error analysis and prioritiaztion
-  ![alt text](./images/2404_ml_ops_specialization/image-17.png)
+  ![alt text](./images/image-17.png)
 
 ### Obtaining data
 
 * Get into iteration loop as quickly as possible (Unless you have worked on the problem before and have sense of how much data it is need)
 * Ask: How much data can we obtain in k days?
 * Brainstorm list of data sources:
-  ![alt text](./images/2404_ml_ops_specialization/image-18.png)
+  ![alt text](./images/image-18.png)
 * Labeling data
   * Options: In-house v.s. outsourced v.s. crowdssourced
   * Don't increase data by more than 10x at a time
@@ -113,12 +113,12 @@ Data defination: input X and target label Y
 
 * Make sure the scripts/data is replicable
 * POC (proof-of-concept) > Production phases:
-  * ![alt text](./images/2404_ml_ops_specialization/image-19.png)
+  * ![alt text](./images/image-19.png)
 * Balanced train/dev/test splits
   * distribute 3 set equally in small data problems
   * random split will be representative
 * Example: **keep track of data provenace and lineage** (using meta data is one of the methods)
-    ![alt text](./images/2404_ml_ops_specialization/image-20.png)
+    ![alt text](./images/image-20.png)
 
 ## 3. Modeling
 
@@ -128,7 +128,7 @@ Model-centic AI development v.s. Data-centric AI development
 ### Key changllenges
 
 * Model development is an iterative process
-  * ![alt text](./images/2404_ml_ops_specialization/image-5.png)
+  * ![alt text](./images/image-5.png)
 * Challenges in model development
   * Do well in : training set > dev/test set > business metric/project goals
   * Why low avg error isn't good enough: single std can not reflact on key slices
@@ -141,7 +141,7 @@ Model-centic AI development v.s. Data-centric AI development
 * Establish a baseline
   * Establish a baseline level of performace
   * Unstructured and structured data: human good at unstructured v.s. machine good at structured
-  * ![alt text](./images/2404_ml_ops_specialization/image-6.png)
+  * ![alt text](./images/image-6.png)
 * Tips for getting started
   * Starting on modeling
     * literacture search to see what's possible (courses, blogs, open-source projects)
@@ -153,7 +153,7 @@ Model-centic AI development v.s. Data-centric AI development
 ### Error analysis
 
 * Use tags can help catergoize issue
-    ![alt text](./images/2404_ml_ops_specialization/image-7.png)
+    ![alt text](./images/image-7.png)
 * Prioritizing what to work on
   * How much room for improvement there is
   * How frequently that category appears
@@ -167,8 +167,8 @@ Model-centic AI development v.s. Data-centric AI development
 Example Analysis
 
 Skewed dataset : large portion of data is '0'
-![alt text](./images/2404_ml_ops_specialization/image-8.png)
-![alt text](./images/2404_ml_ops_specialization/image-9.png)
+![alt text](./images/image-8.png)
+![alt text](./images/image-9.png)
 
 ### Performace auditing
 
@@ -184,18 +184,18 @@ Auditing framework
 **Data-centric view:** The quality of the data is paramount. Use tools to improve the data quality; this will allow multiple models to do well > Hold the code fixed and iteratively improve the data
 
 Example of data augmentation analysis
-![alt text](./images/2404_ml_ops_specialization/image-10.png)
+![alt text](./images/image-10.png)
 
 * Data augmentaiton
   * Goal: Create 'realistic' examples that algotiythm does poorly on but humans (or other baseline) can do well on
 * Data iteration
-  * ![alt text](./images/2404_ml_ops_specialization/image-11.png)
+  * ![alt text](./images/image-11.png)
   * for unstructure data: If the model is sufficiently large (less bias), adding data will not hurts accuracy
   * for structure data: Adding features. (collebrative filter v.s. content filter aka cold-start filter)
 * Experiment tracking (systematic)
-  * ![alt text](./images/2404_ml_ops_specialization/image-12.png)
+  * ![alt text](./images/image-12.png)
 
-![alt text](./images/2404_ml_ops_specialization/image-13.png)
+![alt text](./images/image-13.png)
 
 ## 4. Deployment
 
@@ -223,12 +223,12 @@ Example of data augmentation analysis
   * Blue green deployment: Switch to new model directly but can swtich back
   * Degree of automation:
   Human only >> Shadow mode >> AI assistance >> Partial automation >> Full automation
-![alt text](./images/2404_ml_ops_specialization/image-2.png)
+![alt text](./images/image-2.png)
 
 ### Monitoring + Maintainance
 
-![alt text](./images/2404_ml_ops_specialization/image-3.png)
-![alt text](./images/2404_ml_ops_specialization/image-4.png)
+![alt text](./images/image-3.png)
+![alt text](./images/image-4.png)
 
 Ref:
 
@@ -303,14 +303,14 @@ Geirhos, R., Janssen, D. H. J., Schutt, H. H., Rauber, J., Bethge, M., & Wichman
 
 # C2 Machine Learning Engineering for Production (MLOps) Specialization
 
-![alt text](./images/2404_ml_ops_specialization/image-26.png)
-![alt text](./images/2404_ml_ops_specialization/image-23.png)
+![alt text](./images/image-26.png)
+![alt text](./images/image-23.png)
 
 ## C2W1 Collecting,Labeling and Validating Data
 
 * Production ML = ML development + software development
-  ![alt text](./images/2404_ml_ops_specialization/image-24.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-25.png)
+  ![alt text](./images/image-24.png)
+  ![alt text](./images/image-25.png)
 * Managing the entire life cycle of data
   * Labeling
   * Feature space coverage
@@ -335,10 +335,10 @@ Geirhos, R., Janssen, D. H. J., Schutt, H. H., Rauber, J., Bethge, M., & Wichman
 
 ### ML Pipelines
 
-![alt text](./images/2404_ml_ops_specialization/image-27.png)
-![alt text](./images/2404_ml_ops_specialization/image-28.png)
-![alt text](./images/2404_ml_ops_specialization/image-29.png)
-![alt text](./images/2404_ml_ops_specialization/image-30.png)
+![alt text](./images/image-27.png)
+![alt text](./images/image-28.png)
+![alt text](./images/image-29.png)
+![alt text](./images/image-30.png)
 
 ### Collecting Data
 
@@ -347,11 +347,11 @@ data collect > ingest > prepare
 * Importance of data quality
 * Data pipeline: data collection, ingestion and preparation
 * Data collection and monitoring
-![alt text](./images/2404_ml_ops_specialization/image-31.png)
+![alt text](./images/image-31.png)
 
 Key points:
-  ![alt text](./images/2404_ml_ops_specialization/image-33.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-34.png)
+  ![alt text](./images/image-33.png)
+  ![alt text](./images/image-34.png)
 
 **xhu NOTE**
 
@@ -362,10 +362,10 @@ Key points:
 
 * Model performance decays over time, and model retraining helps improve or maintain performance.
 * Data labeling is a key part of supervised learning and needs to be approached based on the specific problem and domain.
-![alt text](./images/2404_ml_ops_specialization/image-35.png)
+![alt text](./images/image-35.png)
 
-![alt text](./images/2404_ml_ops_specialization/image-36.png)
-![alt text](./images/2404_ml_ops_specialization/image-37.png)
+![alt text](./images/image-36.png)
+![alt text](./images/image-37.png)
 
 * Direct Labeling v.s. Derived Labeling (Human raters)
 
@@ -390,8 +390,8 @@ Direct Labeling (aka Process Feedback) labels come from monitoring predictions, 
 |-------------|-------------|
 | Drift       | Changes in data over time, such as data collected once a day |
 | Skew        | Difference between two static versions or different sources, such as training set and serving set |
-![alt text](./images/2404_ml_ops_specialization/image-38.png)
-![alt text](./images/2404_ml_ops_specialization/image-39.png)
+![alt text](./images/image-38.png)
+![alt text](./images/image-39.png)
 
 #### Detecting data issues
 
@@ -399,13 +399,13 @@ Direct Labeling (aka Process Feedback) labels come from monitoring predictions, 
   * Training and serving data do not conform to the same schema
 * deteching distribution skew
   * dataset shift -> covariate or concept shift
-  ![alt text](./images/2404_ml_ops_specialization/image-40.png)
+  ![alt text](./images/image-40.png)
 
 **data requires continuous evaluation**
-![alt text](./images/2404_ml_ops_specialization/image-41.png)
+![alt text](./images/image-41.png)
 
 TensorFlow Data Validation
-![alt text](./images/2404_ml_ops_specialization/image-42.png)
+![alt text](./images/image-42.png)
 
 <https://github.com/cdfoundation/sig-mlops/blob/main/roadmap/2022/MLOpsRoadmap2022.md>
 
@@ -421,25 +421,25 @@ TensorFlow Data Validation
   * Increasing predictive quality
   * Reducing dimentionalitywith feathre engineering
 * The art of feature engineering
-  * ![alt text](./images/2404_ml_ops_specialization/image-43.png)
+  * ![alt text](./images/image-43.png)
 * How feature engineering is done ina typical ML pipeline
-  * ![alt text](./images/2404_ml_ops_specialization/image-45.png)
+  * ![alt text](./images/image-45.png)
 * Feature engineering process
-  * ![alt text](./images/2404_ml_ops_specialization/image-44.png)
+  * ![alt text](./images/image-44.png)
 
 #### Preprocessing Operations
 
 * Main preprocessing operations
   * Data cleansing, Feature tuning, Representation transofmration, Feature extractation, Feature construction
 * Mapping raw data into features (Vectorizel)
-  * ![alt text](./images/2404_ml_ops_specialization/image-46.png)
+  * ![alt text](./images/image-46.png)
 * Mapping numeric values
 * Mapping catergorical values
-  * ![alt text](./images/2404_ml_ops_specialization/image-47.png)
+  * ![alt text](./images/image-47.png)
 * Empirical knowledge of data
   * Text  - stemming, lemmatization, TF-IDF embedding lookup
   * Imges- clipping, resizing, cropping, blur, Canny filters, Sober filters
-  ![alt text](./images/2404_ml_ops_specialization/image-48.png)
+  ![alt text](./images/image-48.png)
 
 #### Techniques
 
@@ -455,15 +455,15 @@ TensorFlow Data Validation
   * (TensorFlow embedding projector for high dimension data visualize)
   * Feature corsses: Combines multiple features together into a new feature(space)/encode same into in fewer features, e.g A, B -> A x B
   * Feature coding: transforming categorical to a continuous variables
-  ![alt text](./images/2404_ml_ops_specialization/image-51.png)
+  ![alt text](./images/image-51.png)
 
 ### Feature Transform in scale
 
-![alt text](./images/2404_ml_ops_specialization/image-52.png)
+![alt text](./images/image-52.png)
 
 #### Preprocessing Data at Scale
 
-  ![alt text](./images/2404_ml_ops_specialization/image-53.png)
+  ![alt text](./images/image-53.png)
 
 * Inconsistancies in feature engineering (important)
   * traning & serving code paths are different
@@ -471,7 +471,7 @@ TensorFlow Data Validation
   * risk of introducing training-serving skew
   * skel will lower the performace of your serving model
 * Preprocssing granularity
-  * ![alt text](./images/2404_ml_ops_specialization/image-54.png)
+  * ![alt text](./images/image-54.png)
 * Pre-procssing training dataset
     |                            | Pre-processing training dataset | Transforming within the model |
     |----------------------------|---------------------------------|-------------------------------|
@@ -489,20 +489,20 @@ TensorFlow Data Validation
   * Balancing the predictive performace
   * Full-pass transformations on traning data
   * Optimizing instance0level transforations for better traning efficiency
-  ![alt text](./images/2404_ml_ops_specialization/image-55.png)
+  ![alt text](./images/image-55.png)
 
 #### TensorFlow Transform
 
 * Benefits of using TensorFlow Transform
-  ![alt text](./images/2404_ml_ops_specialization/image-61.png)
+  ![alt text](./images/image-61.png)
 * Applied feature transformations
 * tf.Transform Analyzers
-  ![alt text](./images/2404_ml_ops_specialization/image-56.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-57.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-58.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-59.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-60.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-62.png)
+  ![alt text](./images/image-56.png)
+  ![alt text](./images/image-57.png)
+  ![alt text](./images/image-58.png)
+  ![alt text](./images/image-59.png)
+  ![alt text](./images/image-60.png)
+  ![alt text](./images/image-62.png)
 
 **xhu Note**
 
@@ -521,7 +521,7 @@ TensorFlow Data Validation
     * Same classes
     * Similar characteristics for image data
     * Similar vocabulary, syntax and sematics for NLP data
-  * ![alt text](./images/2404_ml_ops_specialization/image-63.png)
+  * ![alt text](./images/image-63.png)
 
 #### Feature Selection
 
@@ -539,14 +539,14 @@ TensorFlow Data Validation
     * Select features that are most relevant to the target variable
 
 * Supervised Feature Selection Methods:
-  ![alt text](./images/2404_ml_ops_specialization/image-66.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-67.png)
+  ![alt text](./images/image-66.png)
+  ![alt text](./images/image-67.png)
   * Filter Methods: e.g.Pearson correlation
       Filter methods suffer from inefficiencies as they need to look at all the possible feature subsets.
-      ![alt text](./images/2404_ml_ops_specialization/image-64.png)
+      ![alt text](./images/image-64.png)
   * Wrapper Methods
       Wrapper methods are based  on the greedy algorithm and thus solutions are slow to compute.
-      ![alt text](./images/2404_ml_ops_specialization/image-65.png)
+      ![alt text](./images/image-65.png)
   * Embedded Methods
 
 **xhu Note**
@@ -562,19 +562,19 @@ TensorFlow Data Validation
 * Raw features and labels
 * Input-output map
 * ML model to learn the map
-  ![alt text](./images/2404_ml_ops_specialization/image-68.png)
+  ![alt text](./images/image-68.png)
 
 #### Data provenace
 
-  ![alt text](./images/2404_ml_ops_specialization/image-69.png)
+  ![alt text](./images/image-69.png)
 
 #### Data lineage
 
-  ![alt text](./images/2404_ml_ops_specialization/image-70.png)
+  ![alt text](./images/image-70.png)
 
 #### Data versioning
 
-  ![alt text](./images/2404_ml_ops_specialization/image-71.png)
+  ![alt text](./images/image-71.png)
 
 ### ML metadata
 
@@ -582,7 +582,7 @@ Metadata: Tracking artifacts and pipeline changes (Using ML metadata to track ch
 Ordinary ML data pipeline
 
 * Data Validation -> Data Transformation
-![alt text](./images/2404_ml_ops_specialization/image-72.png)
+![alt text](./images/image-72.png)
 
 |         Units                   | Types           | Relationships |
 |----------------------------|-----------------|-----------------|
@@ -590,16 +590,16 @@ Ordinary ML data pipeline
 | Execution                     | ExecutionType | Attribution   |
 | Context                        | ContextType   | Association    |
 
-![alt text](./images/2404_ml_ops_specialization/image-73.png)
-![alt text](./images/2404_ml_ops_specialization/image-74.png)
+![alt text](./images/image-73.png)
+![alt text](./images/image-74.png)
 
 #### ML Data
 
 * Architecture and nomenclature
 * Tracking metadata flowing between components in pipeline
-![alt text](./images/2404_ml_ops_specialization/image-75.png)
+![alt text](./images/image-75.png)
 
-![alt text](./images/2404_ml_ops_specialization/image-76.png)
+![alt text](./images/image-76.png)
 
 ```html
 Data model ref: https://www.tensorflow.org/tfx/guide/mlmd#data_model
@@ -628,11 +628,11 @@ An ExecutionType describes a type of component or step in a workflow, and its ru
   * Valency: Min, Max, etc.(features with multiple values)
   * Domain: Categorical, Numerical, Range, etc.
   * Default value
-      ![alt text](./images/2404_ml_ops_specialization/image-77.png)
-      ![alt text](./images/2404_ml_ops_specialization/image-78.png)
-      ![alt text](./images/2404_ml_ops_specialization/image-79.png)
-      ![alt text](./images/2404_ml_ops_specialization/image-80.png)
-      ![alt text](./images/2404_ml_ops_specialization/image-81.png)
+      ![alt text](./images/image-77.png)
+      ![alt text](./images/image-78.png)
+      ![alt text](./images/image-79.png)
+      ![alt text](./images/image-80.png)
+      ![alt text](./images/image-81.png)
 * Looking at schema versions to track data evolution
 * Schema can drive other automated processes
 
@@ -646,11 +646,11 @@ An ExecutionType describes a type of component or step in a workflow, and its ru
 #### Feature Stores
 
 * A feature store is a central repository for storing documented, curated and access controlled features. Feature stores are valuable centralized feature repositories that reduce redundant work. They are also valuable because they enable teams to share data and discover data that is already available
-  ![alt text](./images/2404_ml_ops_specialization/image-82.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-83.png)
+  ![alt text](./images/image-82.png)
+  ![alt text](./images/image-83.png)
 * Online v.s. Offline
-  ![alt text](./images/2404_ml_ops_specialization/image-84.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-85.png)
+  ![alt text](./images/image-84.png)
+  ![alt text](./images/image-85.png)
 * Key aspects
   * Managing feature data from a single person to large enterprises
   * Scalable and performant access to feature data in training and serving
@@ -679,14 +679,14 @@ Data warehouses are repositories that aggregate data from one or more sources
   * High return on investment
   * Increased query and system performance
 * Comparison with databases
-  ![alt text](./images/2404_ml_ops_specialization/image-86.png)
+  ![alt text](./images/image-86.png)
 
 #### Data Lakes
 
 A data lake is a system or repository of data stored in its natural and raw format, which is usually in the form of blobs or files.
 
 * Comparison with datawarehouse
-  ![alt text](./images/2404_ml_ops_specialization/image-87.png)
+  ![alt text](./images/image-87.png)
 
 **xhu Note**
 
@@ -714,13 +714,13 @@ Why?
 
 * Semi-supervised Learning
   *Label propagation
-  ![alt text](./images/2404_ml_ops_specialization/image-88.png)
+  ![alt text](./images/image-88.png)
 
 * Active Learning
-  ![alt text](./images/2404_ml_ops_specialization/image-89.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-90.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-91.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-92.png)
+  ![alt text](./images/image-89.png)
+  ![alt text](./images/image-90.png)
+  ![alt text](./images/image-91.png)
+  ![alt text](./images/image-92.png)
 * Weak supervision
   Weak supervision is baout leveraging higher-kevek abd/or noisier input from subject matter exports (SMSEs)
   * Unlabeled data, without ground-truth labels
@@ -730,10 +730,10 @@ Why?
   * Noisy labels have certrain probability of being correct, not 100%
   * Objective: learn a generative model to determine weights of weak supervision sources
   * Snorkel
-    ![alt text](./images/2404_ml_ops_specialization/image-93.png)
+    ![alt text](./images/image-93.png)
 
 **xhu Note**
-![alt text](./images/2404_ml_ops_specialization/image-94.png)
+![alt text](./images/image-94.png)
 
 * Semi-supervised learning:
   * Applied the best of supervised and unsupervised approaches
@@ -747,7 +747,7 @@ Why?
 
 ### Data Augmentation
 
-![alt text](./images/2404_ml_ops_specialization/image-95.png)
+![alt text](./images/image-95.png)
 
 * It generates artificial data by creating new examples which are variants of the original data
 * It increases the diversity and number of examples in the traning data
@@ -871,7 +871,7 @@ Iscen, A., Tolias, G., Avrithis, Y., & Chum, O. (2019). Label propagation for de
 
 # C3 Machine Learning Modeling Pipelines in Production
 
-![alt text](./images/2404_ml_ops_specialization/image-96.png)
+![alt text](./images/image-96.png)
 
 ## C3W1 Neural Architecture Search
 
@@ -892,7 +892,7 @@ Types of parameters in ML Models
   * not updated in each training step
   * e.g.learning rate, batch size, number of unit in dense layers, etc.
 
-![alt text](./images/2404_ml_ops_specialization/image-97.png)
+![alt text](./images/image-97.png)
 > Keras autotuner: <https://keras.io/api/keras_tuner/>.
 
 ```python
@@ -1006,17 +1006,17 @@ tuner = tfx.components.Tuner(
 
 ### Automated Machine Learning  (AutoML)
 
-![alt text](./images/2404_ml_ops_specialization/image-98.png)
-![alt text](./images/2404_ml_ops_specialization/image-99.png)
-![alt text](./images/2404_ml_ops_specialization/image-100.png)
-![alt text](./images/2404_ml_ops_specialization/image-101.png)
+![alt text](./images/image-98.png)
+![alt text](./images/image-99.png)
+![alt text](./images/image-100.png)
+![alt text](./images/image-101.png)
 
 #### Types of Search Spaces
 
 * Macro Architecture Search Space: Contrains individual layers and connection types
 * Micro Architecture Search Space: neural architecture search builds a neural network from cells where each cell is a smaller network
-![alt text](./images/2404_ml_ops_specialization/image-102.png)
-![alt text](./images/2404_ml_ops_specialization/image-103.png)
+![alt text](./images/image-102.png)
+![alt text](./images/image-103.png)
 
 #### Search Strageties
 
@@ -1024,22 +1024,22 @@ tuner = tfx.components.Tuner(
   * Exhaustive search over a specified parameter grid
 * Random Search
 * Bayesian Optimization
-  ![alt text](./images/2404_ml_ops_specialization/image-104.png)
+  ![alt text](./images/image-104.png)
 * Evolutionary Algorithms
-  ![alt text](./images/2404_ml_ops_specialization/image-105.png)
+  ![alt text](./images/image-105.png)
 * Reinforcement Learning
-  ![alt text](./images/2404_ml_ops_specialization/image-106.png)
+  ![alt text](./images/image-106.png)
 
 #### Measuring AutoML Efficiency
 
 Strategies to reduce the cost:
 
 * Lower fidelity estimates
-  * ![alt text](./images/2404_ml_ops_specialization/image-107.png)
+  * ![alt text](./images/image-107.png)
 * Learning Curve Extrapolation
-  * ![alt text](./images/2404_ml_ops_specialization/image-108.png)
+  * ![alt text](./images/image-108.png)
 * Weight Inheritance/Network Morphism
-  * ![alt text](./images/2404_ml_ops_specialization/image-109.png)
+  * ![alt text](./images/image-109.png)
 
 #### AutoML on the Cloud
 
@@ -1053,7 +1053,7 @@ Popular Cloud Offerings:
     * Performace ranked
     * Selected features
     * Notebooks for reproducibility
-  ![alt text](./images/2404_ml_ops_specialization/image-110.png)
+  ![alt text](./images/image-110.png)
 * Microsoft Azure Automated Machine Learning
   * Quick customization: model + control settings
   * Automated Feature Engineering
@@ -1073,7 +1073,7 @@ Popular Cloud Offerings:
   * Data labeling
   * Data cleaning
 
-![alt text](./images/2404_ml_ops_specialization/image-111.png)
+![alt text](./images/image-111.png)
 
 Papers：
 <https://arxiv.org/pdf/1611.01578>
@@ -1098,8 +1098,8 @@ Why are mode feautres a problem?
 * More noise added than signal
 * Hard to interpret and visualize
 * Hard to store and process data
-![alt text](./images/2404_ml_ops_specialization/image-112.png)
-![alt text](./images/2404_ml_ops_specialization/image-113.png)
+![alt text](./images/image-112.png)
+![alt text](./images/image-113.png)
 
 Why reduce dimentionality?
 
@@ -1112,7 +1112,7 @@ Major techniques for dimensionality reduction
 
 * Engineering
   * Feature Engineering
-  ![alt text](./images/2404_ml_ops_specialization/image-114.png)
+  ![alt text](./images/image-114.png)
 * Selection
 
 Approches of conduction dimensionality reduction
@@ -1120,14 +1120,14 @@ Approches of conduction dimensionality reduction
 * Mannually dimensionality reducton
 * Algorithmic dimensionality reducton
   * Linear dimentionality reduction: project n-dimensional data into a k-dimensional subspace (k<<n)
-  ![alt text](./images/2404_ml_ops_specialization/image-115.png)
+  ![alt text](./images/image-115.png)
     * Principal component analysis (PCA)
-    ![alt text](./images/2404_ml_ops_specialization/image-116.png)
+    ![alt text](./images/image-116.png)
   * More dimensionality reduction algorithms
-    ![alt text](./images/2404_ml_ops_specialization/image-117.png)
+    ![alt text](./images/image-117.png)
     * Singular value decomposition (SVD)
     * Independent component analysis (ICA)
-      ![alt text](./images/2404_ml_ops_specialization/image-118.png)
+      ![alt text](./images/image-118.png)
     * Non-negative Matrix Factorization (NMF)
 
 **xhu Note**
@@ -1145,16 +1145,16 @@ Data Science integrates all data generation, data preprocessing and data analysi
   * Cost-effitiveness
   * Compliance with privacy regulations
 
-![alt text](./images/2404_ml_ops_specialization/image-119.png)
-![alt text](./images/2404_ml_ops_specialization/image-120.png)
-![alt text](./images/2404_ml_ops_specialization/image-121.png)
+![alt text](./images/image-119.png)
+![alt text](./images/image-120.png)
+![alt text](./images/image-121.png)
 
 #### Quantization
 
 involves transforming a model into an equivalent representation that uses parameters and computations at a lower precision
 
 e.g. quantizing img
-![alt text](./images/2404_ml_ops_specialization/image-122.png)
+![alt text](./images/image-122.png)
 
 Why quantize neural networks?
 
@@ -1169,10 +1169,10 @@ Benefits of quantization
 * Low memory bandwidth
 * Low power
 * Integer operations supported across CPU/DSP/NPUs
-![alt text](./images/2404_ml_ops_specialization/image-123.png)
+![alt text](./images/image-123.png)
 
 Trade-offs
-![alt text](./images/2404_ml_ops_specialization/image-124.png)
+![alt text](./images/image-124.png)
 
 * Accuracy
 
@@ -1182,7 +1182,7 @@ Theoratically can do quantization during or after training
 
 * Post-training quantization: a conversion technique that can reduce model size while also improving CPU and hardware accelerator latency with little degradation in model accuracy -> quantize an already trained TensorFlow model
   * Float16 is especially useful when you plan to use a GPU > best balanced?
-  ![alt text](./images/2404_ml_ops_specialization/image-125.png)
+  ![alt text](./images/image-125.png)
   * Alternatively, consider using quantization aware training if the loss of accuracy is too great
 
 ```python
@@ -1200,8 +1200,8 @@ Quantization Aware Training(QAT)
 * Reduce the loss of acuracy due to quantization
 * Resulting model contrains all data to be quantized according to spec
 
-![alt text](./images/2404_ml_ops_specialization/image-126.png)
-![alt text](./images/2404_ml_ops_specialization/image-127.png)
+![alt text](./images/image-126.png)
+![alt text](./images/image-127.png)
 
 ```python
 import tensorflow_model_optimization as tfmot
@@ -1234,7 +1234,7 @@ Reference
 #### Pruning
 
 to remove parts of the model that did not contribute substantially to producing accurate results > zeroing out insignificant (i.e. low magnitude) weights
-![alt text](./images/2404_ml_ops_specialization/image-128.png)
+![alt text](./images/image-128.png)
 
 ```python
 # Get the pruning method
@@ -1280,8 +1280,8 @@ What's special about pruning?
 * Unlock performance improvements
 
 * The Lottery Ticket Hypothesis <https://arxiv.org/abs/1803.03635>
-![alt text](./images/2404_ml_ops_specialization/image-129.png)
-![alt text](./images/2404_ml_ops_specialization/image-130.png)
+![alt text](./images/image-129.png)
+![alt text](./images/image-130.png)
 
 **xhu Note**
 Although pruning can make additional benefits such as improved transmission and gains speed increases in the CPU, there are still significant limitations of this method to solve architectures on a larger scale.
@@ -1290,12 +1290,12 @@ Although pruning can make additional benefits such as improved transmission and 
 
 ### Distributed Training
 
-![alt text](./images/2404_ml_ops_specialization/image-131.png)
+![alt text](./images/image-131.png)
 
 * Types of distributed training
   * Data parallelism: In data parallelism, the model is replicated on different accelerators (GPU/CPU) and data is split between them
-  ![alt text](./images/2404_ml_ops_specialization/image-132.png)
-  ![alt text](./images/2404_ml_ops_specialization/image-133.png)
+  ![alt text](./images/image-132.png)
+  ![alt text](./images/image-133.png)
   * Model parallelism: When models are too large to fit on a single device then they can be divided into partitions, assigning different partitions to different acceleators
 
 * Distribution Strategy. API e.g. tf.distribute.Strategy
@@ -1310,7 +1310,7 @@ Although pruning can make additional benefits such as improved transmission and 
   * Central Storage Strategy
   * TPU Strategy
 
-![alt text](./images/2404_ml_ops_specialization/image-134.png)
+![alt text](./images/image-134.png)
 
 ### High Performance Models
 
@@ -1322,19 +1322,19 @@ Accelerators are a key part of high-performance modeling, training, and inferenc
 
 * Full utilization of hardware resources
 
-![alt text](./images/2404_ml_ops_specialization/image-135.png)
-![alt text](./images/2404_ml_ops_specialization/image-136.png)
-![alt text](./images/2404_ml_ops_specialization/image-137.png)
+![alt text](./images/image-135.png)
+![alt text](./images/image-136.png)
+![alt text](./images/image-137.png)
 
 How to optimize pipline performance?
 
 * Prefetching
-  ![alt text](./images/2404_ml_ops_specialization/image-138.png)
+  ![alt text](./images/image-138.png)
 * Parallelizing data extraction and transformation
   * Parallelize data extraction
     * Perfer local storage as it takes significantly less time than read data from remote storage
     * Maximize the aggregate badwidth of the remote storage by reading more files
-    ![alt text](./images/2404_ml_ops_specialization/image-139.png)
+    ![alt text](./images/image-139.png)
   * Parallelize data transformation
     * Post data loading, the inputs may need preprocessing
     * Element-wise preprocessing can be parallelized accross CPU cores
@@ -1346,14 +1346,14 @@ How to optimize pipline performance?
 * Caching
   * In memory: tf.data.Dataset.cache()
   * Disk: tf.data.Dataset.cache(filename=)
-  ![alt text](./images/2404_ml_ops_specialization/image-140.png)
+  ![alt text](./images/image-140.png)
 * Reduce memory
 
 #### High Performance Modelling
 
-![alt text](./images/2404_ml_ops_specialization/image-141.png)
-![alt text](./images/2404_ml_ops_specialization/image-142.png)
-![alt text](./images/2404_ml_ops_specialization/image-143.png)
+![alt text](./images/image-141.png)
+![alt text](./images/image-142.png)
+![alt text](./images/image-143.png)
 
 Ref:
 <https://arxiv.org/abs/1811.06965>
@@ -1368,7 +1368,7 @@ Why knowledge distillation? -> Sophisticated models and their problems
 
 To distill or concertrate this complexity into smaller networks
 
-![alt text](./images/2404_ml_ops_specialization/image-144.png)
+![alt text](./images/image-144.png)
 
 Teacher-student model
 
@@ -1468,12 +1468,12 @@ Techniques
 * Approach #1: **Weight objectives** (student and teacher) and combine during backprop
 * Approach #2: **Compare distributions** of the preductions (student and teacher) using KL divergence
 
-![alt text](./images/2404_ml_ops_specialization/image-145.png)
-![alt text](./images/2404_ml_ops_specialization/image-146.png)
+![alt text](./images/image-145.png)
+![alt text](./images/image-146.png)
 
-![alt text](./images/2404_ml_ops_specialization/image-147.png)
+![alt text](./images/image-147.png)
 
-![alt text](./images/2404_ml_ops_specialization/image-148.png)
+![alt text](./images/image-148.png)
 
 Paper:
 
@@ -1482,14 +1482,14 @@ Paper:
 ## C3W4 Model Analysis
 
 Black box v.s. Model introspection
-![alt text](./images/2404_ml_ops_specialization/image-149.png)
-![alt text](./images/2404_ml_ops_specialization/image-150.png)
+![alt text](./images/image-149.png)
+![alt text](./images/image-150.png)
 
 ### Model Analysis & Debugging
 
 #### TensorFlow Model Analysis (TFMA)
 
-![alt text](./images/2404_ml_ops_specialization/image-151.png)
+![alt text](./images/image-151.png)
 
 <https://blog.tensorflow.org/2018/03/introducing-tensorflow-model-analysis.html>
 <https://www.tensorflow.org/tfx/model_analysis/architecture>
@@ -1530,11 +1530,11 @@ Interpretable and explainable ML:
 
 contingency table -> If the data is stationary these quantities should not change over time
 
-![alt text](./images/2404_ml_ops_specialization/image-152.png)
+![alt text](./images/image-152.png)
 
 ## C3W5 Explainable AI
 
-![alt text](./images/2404_ml_ops_specialization/image-153.png)
+![alt text](./images/image-153.png)
 Paper:
 <https://arxiv.org/pdf/1910.10045>
 
@@ -1550,7 +1550,7 @@ Interpretation methods can be grouped based on
 Model Agnostic Methods
 
 * Partial Dependence Plots (PDPs)
-![alt text](./images/2404_ml_ops_specialization/image-154.png)
+![alt text](./images/image-154.png)
 
 ## C3 Reference
 
@@ -1914,20 +1914,20 @@ NoSQL solutions for implementing caching and feature lookup
 
 ### Online Inference
 
-![alt text](./images/2404_ml_ops_specialization/image-155.png)
+![alt text](./images/image-155.png)
 
 * Infrastrucutre
 * Model Architecture
 * Model Compilation
-![alt text](./images/2404_ml_ops_specialization/image-158.png)
+![alt text](./images/image-158.png)
 
 Cached data
-![alt text](./images/2404_ml_ops_specialization/image-159.png)
-![alt text](./images/2404_ml_ops_specialization/image-156.png)
+![alt text](./images/image-159.png)
+![alt text](./images/image-156.png)
 
 ### Data Preprocessing
 
-![alt text](./images/2404_ml_ops_specialization/image-160.png)
+![alt text](./images/image-160.png)
 
 ### Batch Inference
 
@@ -1936,7 +1936,7 @@ ETL pipelines
 * To extract data from data sources, transforming, and loading it into an output destination.
 * The results of the ETL workflow are stored in a database and the results are a lower latency and higher throughput of data processing.
 
-![alt text](./images/2404_ml_ops_specialization/image-157.png)
+![alt text](./images/image-157.png)
 
 ## C4W3 ML Experiments Management and Workflow Automation
 
@@ -1954,18 +1954,18 @@ Data Versioning:
 
 ### MLOps Methodologies
 
-![alt text](./images/2404_ml_ops_specialization/image-161.png)
-![alt text](./images/2404_ml_ops_specialization/image-162.png)
-![alt text](./images/2404_ml_ops_specialization/image-163.png)
+![alt text](./images/image-161.png)
+![alt text](./images/image-162.png)
+![alt text](./images/image-163.png)
 
 MLOps:
 <https://neptune.ai/blog/mlops>
 <https://github.com/visenger/awesome-mlops>
 
 <https://cloud.google.com/architecture/architecture-for-mlops-using-tfx-kubeflow-pipelines-and-cloud-build>
-![alt text](./images/2404_ml_ops_specialization/image-164.png)
+![alt text](./images/image-164.png)
 
 ## C4W4 Model Monitoring
 
-![alt text](./images/2404_ml_ops_specialization/image-165.png)
+![alt text](./images/image-165.png)
 <https://christophergs.com/machine%20learning/2020/03/14/how-to-monitor-machine-learning-models/>
