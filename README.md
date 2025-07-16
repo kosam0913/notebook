@@ -1,24 +1,13 @@
 # Notebooks Workspace
 
-本仓库用于整理和管理个人学习、项目和资料，涵盖AI/机器学习、商业、项目管理等多个领域
+本仓库用于整理和管理个人学习、项目和资料
 
 ## 目录结构说明
 
-- **ai-machine-learning/**  
-  AI与机器学习相关内容，包括深度学习、TensorFlow、MLOps等笔记、作业和图片。
-- **business-entrepreneurship/**  
-  商业、创业、商务英语等相关笔记和材料。
-- **project-management/**  
-  项目管理相关内容，如PMP认证、项目文档、材料和图片。
-- **clouds/**  
-  云计算相关内容（如有）。
-- **resources/**  
-  全局共享资源、模板和学习材料。
-- **RESTRUCTURE_PLAN.md**  
-  文件结构重构方案和迁移说明。
-
-```
-
+- **ai-machine-learning**: AI与机器学习相关内容，包括深度学习、TensorFlow、MLOps等笔记、作业和图片。
+- **business-entrepreneurship**: 商业、创业、商务英语等相关笔记和材料。
+- **project-management**: 项目管理相关内容，如PMP认证、项目文档、材料和图片。
+- **clouds**: 云计算相关内容，如AWS等笔记
 
 ```
 notebooks/
