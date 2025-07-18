@@ -9,7 +9,7 @@ Google PMP Certification
 * C6 Capstone: Applying Project Management in the Real World
 
 Career Indentity
-![alt text](image-0.png)
+![alt text](../images/image-0.png)
 
 * Strength: 
       * 条理清晰：always
@@ -44,13 +44,13 @@ The value of PM:
 * Delegation: match tasks to those who can best complete the work
 * Effective Communication
 
-![alt text](image-2.png)
+![alt text](../images/image-2.png)
 
 Project managers may be responsible for teaching and mentoring project team members, building relationships with the team and various stakeholders, controlling change and the impact to the project, empowering team members to make decisions, and communicating status and potential concerns. These interpersonal responsibilities can be just as important to the success of your projects as your more concrete responsibilities, like scheduling and budgeting.
 
 As you continue through this course, you will learn more about how these project manager responsibilities are embedded into the different phases of a project
 
-![alt text](image-3.png)
+![alt text](../images/image-3.png)
 
 **Xhu note**
 
@@ -59,7 +59,7 @@ Recognize efforts is important.
 "we learnt that we can learn and change our mind"
 
 Core skill set as PM:
-![alt text](image-4.png)
+![alt text](../images/image-4.png)
 
 * Enabling decision-making
     * You can help team members feel empowered from the start of your project by making the decision-making process collaborative. For example, state the goals of specific deliverables and elicit input from your team on how to achieve those goals. You may have an idea of how you would like certain tasks to be accomplished, but your team members may have more creative or efficient approaches. Empowering your team to express their opinions and make their own decisions allows you to focus on the overarching management tasks and prioritize them in order of importance. Additionally, when you allow team members to have a voice in decisions, it helps foster an environment of responsibility, accountability, and team closeness.
@@ -93,7 +93,7 @@ Ambiguity can be a big challenge in managing projects. Project managers often fa
 
     * Trust the expertise of your team. Increase clarity by having everyone on your team discuss what they already know or believe to be true about components of your project, such as what is involved in specific tasks or resources needed, based on their areas of expertise. Then, discuss what you still don't know and brainstorm ways to gather more information.
 
-![alt text](image-5.png)
+![alt text](../images/image-5.png)
 
 **Influence without authority**
 * Interpersonal skills: 
@@ -111,11 +111,11 @@ Ambiguity can be a big challenge in managing projects. Project managers often fa
 
     * Understanding motivations: Getting to know your teammates and figuring out what pushes them to their best work is an effective skill to have. 
 
-![alt text](image-6.png)
+![alt text](../images/image-6.png)
 
 ## C1.M3 The project management life cycle and methodologies
 
-![alt text](image-9.png)
+![alt text](../images/image-9.png)
 
 ### The project life cycle
 
@@ -219,9 +219,9 @@ Waterfall, Agile,Scrum,Kanban, Lean, Six Sigma
 
 Two popular strucutures
 * Classic strucuture: traditional top-down system of reporting
-![alt text](image-7.png)
+![alt text](../images/image-7.png)
 * Matrix structure: Direct higher-ups and stakeholders from other depoartments or programs
-![alt text](image-8.png)
+![alt text](../images/image-8.png)
 
 In both Classic and Matrix organizations, project managers must clearly define roles and responsibilities in order to work effectively. However, within most Matrix organizations, some project managers or department leads may have the same level of authority as the functional managers and operate more directly.
 
@@ -248,8 +248,8 @@ Adding up the expected valud of a project(the benefit) and comparing them to the
 * Stakeholders: people who both have an insterest in, and are affected by, the completion and success of the project
 * Resources: budgets, people, materials, and equipment that you will need to complete the project
 
-![alt text](image-10.png)
-![alt text](image-11.png)
+![alt text](../images/image-10.png)
+![alt text](../images/image-11.png)
 
 ## C2.M2 Introduction: Defining project goals, scope, and success criteria
 
@@ -258,7 +258,7 @@ Adding up the expected valud of a project(the benefit) and comparing them to the
 SMART Goals and OKR
 
 **SMART Goals**:
-![alt text](image-12.png)
+![alt text](../images/image-12.png)
 Specific: The objective has no ambiguity for the project team to misinterpret. 
 
 Measurable: Metrics help the project team determine when the objective is met.
@@ -277,7 +277,7 @@ Time-bound: The project team documents a date to achieve the goal.
 * Time: The project must be completed by a certain date.
 * Cost: The project must be completed within a certain budget.
 * Scope: The project must meet the goals and objectives set forth in the project charter.
-![alt text](image-13.png)
+![alt text](../images/image-13.png)
 
 ### Measuring project success
 Launch: delivering the final result of your project to the client or user
@@ -352,8 +352,8 @@ Minimal Engagement:
 
 Maintain a basic level of communication and engagement to keep them aware of the project without distracting them from their regular responsibilities.
 
-![alt text](image-14.png)
-![alt text](image-15.png)
+![alt text](../images/image-14.png)
+![alt text](../images/image-15.png)
 
 Suggested questions for stakeholders
 * What are your most important priorities/goals?
@@ -375,8 +375,8 @@ A: Accountable: who makes sure the work is done
 C: Consulted: who gives input or feedback on work
 I: Informed: who needs to know the outcome
 
-![alt text](image-16.png)
-![alt text](image-17.png)
+![alt text](../images/image-16.png)
+![alt text](../images/image-17.png)
 
 ## C2.M4 Project Initiation: Starting a Successful Project
 
@@ -403,7 +403,7 @@ Project charters will vary but usually include some combination of the following
 7. Project team
 8. Measuring success: lists the success criteria that help you determine when the project has reached its goal.
 
-![alt text](image-19.png)
+![alt text](../images/image-19.png)
 
 ### Tools
 
@@ -455,7 +455,7 @@ Kickoff meeting agenda
     * Ensure the project benefits from diversity of thoughts experiences and ideas
 ```
 
-![alt text](image-20.png)
+![alt text](../images/image-20.png)
 
 Milestones and Tasks
 * A project task is an activity that needs to be accomplished within a set period of time and is assigned to one or more individuals for completion. The work of a project is broken down into many different project tasks. 
@@ -472,7 +472,7 @@ Milestones
 How to set: by looking at your project as a whole and pulling out important checkpoints that show progress, assign deadlines to each milestone while keeping the needs of your stakeholders top of mind
 
 work breakdown structure (WBS)
-![alt text](image-21.png)
+![alt text](../images/image-21.png)
 
 ## C3.M2 Building a project plan
 ### Project plan components
@@ -509,14 +509,14 @@ Critical path
         * backward pass: start with final task and move backwards through schedule
         * calculate earliest and latest start dats and slack
 
-![alt text](image-22.png)
+![alt text](../images/image-22.png)
 
 ### Utilizing tools to build a project plan
 Gantt Chart
-![alt text](image-23.png)
+![alt text](../images/image-23.png)
 
 ## C3.M3 Understanding Project budgets
-![alt text](image-24.png)
+![alt text](../images/image-24.png)
 
 ### Budgeting
 Budgets are typically created in the initiation and planning phases of your project.
@@ -650,8 +650,8 @@ Common ways to deal with risk
 * Transfer
 
 Decision tree
-![alt text](image-25.png)
-![alt text](image-26.png)
+![alt text](../images/image-25.png)
+![alt text](../images/image-26.png)
 
 ## C3.M5 Communication and Documentaiton
 ### Communication
@@ -837,7 +837,7 @@ Foster customer relationships with communication skills
 Measuring customer satisfaction
 * Feedback surveys
 * User acceptance tests (UAT) , aka.beta test
-![alt text](image-28.png)
+![alt text](../images/image-28.png)
 
 ### Continuous imporvement v.s. process improvement
 Process improvement: the practice of identifying, analyzing, and improving existing processes to enhance team performance, meet best practices, or optimize consumer experiences
@@ -1000,7 +1000,7 @@ Be direct and kind. my spirit might really is learning from ilm 0 0
 # C5 Agile Project Management
 ## C5.M1 Fundamentals of Agile
 
-![alt text](image-27.png)
+![alt text](../images/image-27.png)
 Agile Manifesto: An iterative, flexible process that incorporates necessary changes throughout the process and is based on foundational values and principles
 
 Agile and Waterfall
@@ -1204,7 +1204,7 @@ Transparency abd collaboration
 value means different things to different people
 
 Value roadmap
-![alt text](image-29.png)
+![alt text](../images/image-29.png)
 
 Value roadmap 3 key components
 * Product Vison
@@ -1215,7 +1215,7 @@ Value roadmap 3 key components
     * Estimated realase date
     * Other relevant dates that impact a release
 
-![alt text](image-30.png)
+![alt text](../images/image-30.png)
 
 The best way to think about changing your plan is to break it down into three stages:
 1. Identifying a needed change 

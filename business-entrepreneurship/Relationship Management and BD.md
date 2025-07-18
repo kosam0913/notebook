@@ -27,7 +27,6 @@ Trust and transparency are key principles of successful relationship management.
 
 Focusing on delivering value to clients and stakeholders is an essential best practice in relationship management. Understanding their needs, anticipating challenges, and providing solutions that exceed their expectations contribute to delivering value. Consistently delivering value builds trust and loyalty in relationships. Therefore, value creation is a key best practice in relationship management.(See Lesson 5 Video: Relationship management best practices and success stories)
 
-
 ## SUM
 
 Sales and commercial agents possess a unique opportunity to cultivate relationships that go beyond the initial transaction, leading to long-term partnerships and repeat business.
