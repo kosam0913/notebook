@@ -1,3 +1,7 @@
+# AWS Solution Architect Notes
+
+This document contains notes and resources for the AWS Certified Solutions Architect Associate exam preparation. It includes an overview of AWS services, best practices, and architectural patterns.
+
 # Table of Contents
 
 1. <a href="#introduction-aws-certified-solutions-architect-associate">Introduction - AWS Certified Solutions Architect Associate</a>
@@ -27,22 +31,17 @@
 25. <a href="#identity-and-access-management-iam-advanced">Identity and Access Management (IAM) - Advanced</a>
 26. <a href="#aws-security-encryption-kms-ssm-parameter-store-shield-waf">AWS Security & Encryption: KMS, SSM Parameter Store, Shield, WAF</a>
 27. <a href="#networking-vpc">Networking - VPC</a>
-28. <a href="#disaster-recovery-migrations">Disaster Recovery & Migrations</a>
+28. <a href="#disaster-recovery-migrations">Disaster Recovery & Migrations</a
 29. <a href="#more-solution-architectures">More Solution Architectures</a>
 30. <a href="#other-services">Other Services</a>
 31. <a href="#whitepapers-and-architectures-aws-certified-solutions-architect-associate">WhitePapers and Architectures - AWS Certified Solutions Architect Associate</a>
 32. <a href="#preparing-for-the-exam-practice-exam-aws-certified-solutions-architect-assoc">Preparing for the Exam + Practice Exam - AWS Certified Solutions Architect Assoc</a>
 33. <a href="#congratulations-aws-certified-solutions-architect-associate">Congratulations - AWS Certified Solutions Architect Associate</a>
+    // ... existing code ...
 
 ---
 
-# AWS Solution Architect Notes
-
-# 1. Introduction - AWS Certified Solutions Architect Associate <a id="introduction-aws-certified-solutions-architect-associate"></a>
-
-# 2. Code & Slides Download <a id="code-slides-download"></a>
-
-# 3. Getting started with AWS <a id="getting-started-with-aws"></a>
+# 1-3 Introduction <a id="introduction"></a>
 
 31% of the market share
 Region & Availability Zone (AZ):
@@ -58,11 +57,24 @@ Region & Availability Zone (AZ):
 
 **Users** - any individual end user such as an employee, system architect, CTO, etc.
 
-**Groups** - any collection of similar people with shared permissions such as system administrators, HR employees, finance teams, etc. Each user within their specified group will inherit the permissions set for the group.
+**Groups** - any collection of similar people with shared permissions such as system administrators, HR employees, finance teams, etc. Each user within their specified group will inherit the permissions set for the group. IAM User Groups can only contain IAM Users, not other User Groups. _**There is no group nesting**_
 
-**Roles** - any software service that needs to be granted permissions to do its job, e.g- AWS Lambda needing write permissions to S3 or a fleet of EC2 instances needing read permissions from a RDS MySQL database.
+**Roles** - any software service that needs to be granted permissions to do its job, e.g- a fleet of EC2 instances needing read permissions from a RDS MySQL database.
 
 **Policies** - the documented rule sets that are applied to grant or limit access. In order for users, groups, or roles to properly set permissions, they use policies. Policies are written in JSON and you can either use custom policies for your specific needs or use the default policies set by AWS.
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": ["s3:GetObject", "s3:ListBucket"],
+      "Resource": ["arn:aws:s3:::*", "arn:aws:s3:::*/*"]
+    }
+  ]
+}
+```
 
 User / Group / Policy:
 
@@ -109,6 +121,7 @@ Access AWS:
 - Assign User to Groups, permissions ( policy )to Groups, for better management
 - Prgrammatic access via AWS CLI or SDKs, using access keys
 - Two tools to audit permissions: IAM Credential Report and IAM Access Advisor
+- Enable MFA
 
 ## Summary - IAM & AWS CLI
 
@@ -122,121 +135,176 @@ Access AWS:
 - Access Keys: access AWS using the CLI or SDK
 - Audit: IAM Credential Reports & IAM Access Advisor
 
-
-
-
 # 5. EC2 Fundamentals <a id="ec2-fundamentals"></a>
+
 ## 5.1
+
 ## 5.2
 
 # 6. EC2 - Solutions Architect Associate Level <a id="ec2-solutions-architect-associate-level"></a>
+
 ## 6.1
+
 ## 6.2
 
 # 7. EC2 Instance Storage <a id="ec2-instance-storage"></a>
+
 ## 7.1
+
 ## 7.2
 
 # 8. High Availability and Scalability: ELB & ASG <a id="high-availability-and-scalability-elb-asg"></a>
+
 ## 8.1
+
 ## 8.2
 
 # 9. AWS Fundamentals: RDS + Aurora + ElastiCache <a id="aws-fundamentals-rds-aurora-elasticache"></a>
+
 ## 9.1
+
 ## 9.2
 
 # 10. Route 53 <a id="route-53"></a>
+
 ## 10.1
+
 ## 10.2
 
 # 11. Classic Solutions Architecture Discussions <a id="classic-solutions-architecture-discussions"></a>
+
 ## 11.1
+
 ## 11.2
 
 # 12. Amazon S3 Introduction <a id="amazon-s3-introduction"></a>
+
 ## 12.1
+
 ## 12.2
 
 # 13. Advanced Amazon S3 <a id="advanced-amazon-s3"></a>
+
 ## 13.1
+
 ## 13.2
 
 # 14. Amazon S3 Security <a id="amazon-s3-security"></a>
+
 ## 14.1
+
 ## 14.2
 
 # 15. CloudFront & AWS Global Accelerator <a id="cloudfront-aws-global-accelerator"></a>
+
 ## 15.1
+
 ## 15.2
 
 # 16. AWS Storage Extras <a id="aws-storage-extras"></a>
+
 ## 16.1
+
 ## 16.2
 
 # 17. Decoupling applications: SQS, SNS, Kinesis, Active MQ <a id="decoupling-applications-sqs-sns-kinesis-active-mq"></a>
+
 ## 17.1
+
 ## 17.2
 
 # 18. Containers on AWS: ECS, Fargate, ECR & EKS <a id="containers-on-aws-ecs-fargate-ecr-eks"></a>
+
 ## 18.1
+
 ## 18.2
 
 # 19. Serverless Overviews from a Solution Architect Perspective <a id="serverless-overviews-from-a-solution-architect-perspective"></a>
+
 ## 19.1
+
 ## 19.2
 
 # 20. Serverless Solution Architecture Discussions <a id="serverless-solution-architecture-discussions"></a>
+
 ## 20.1
+
 ## 20.2
 
 # 21. Databases in AWS <a id="databases-in-aws"></a>
+
 ## 21.1
+
 ## 21.2
 
 # 22. Data & Analytics <a id="data-analytics"></a>
+
 ## 22.1
+
 ## 22.2
 
 # 23. Machine Learning <a id="machine-learning"></a>
+
 ## 23.1
+
 ## 23.2
 
 # 24. AWS Monitoring & Audit: CloudWatch, CloudTrail & Config <a id="aws-monitoring-audit-cloudwatch-cloudtrail-config"></a>
+
 ## 24.1
+
 ## 24.2
 
 # 25. Identity and Access Management (IAM) - Advanced <a id="identity-and-access-management-iam-advanced"></a>
+
 ## 25.1
+
 ## 25.2
 
 # 26. AWS Security & Encryption: KMS, SSM Parameter Store, Shield, WAF <a id="aws-security-encryption-kms-ssm-parameter-store-shield-waf"></a>
+
 ## 26.1
+
 ## 26.2
 
 # 27. Networking - VPC <a id="networking-vpc"></a>
+
 ## 27.1
+
 ## 27.2
 
 # 28. Disaster Recovery & Migrations <a id="disaster-recovery-migrations"></a>
+
 ## 28.1
+
 ## 28.2
 
 # 29. More Solution Architectures <a id="more-solution-architectures"></a>
+
 ## 29.1
+
 ## 29.2
 
 # 30. Other Services <a id="other-services"></a>
+
 ## 30.1
+
 ## 30.2
 
 # 31. WhitePapers and Architectures - AWS Certified Solutions Architect Associate <a id="whitepapers-and-architectures-aws-certified-solutions-architect-associate"></a>
+
 ## 31.1
+
 ## 31.2
 
 # 32. Preparing for the Exam + Practice Exam - AWS Certified Solutions Architect Assoc <a id="preparing-for-the-exam-practice-exam-aws-certified-solutions-architect-assoc"></a>
+
 ## 32.1
+
 ## 32.2
 
 # 33. Congratulations - AWS Certified Solutions Architect Associate <a id="congratulations-aws-certified-solutions-architect-associate"></a>
+
 ## 33.1
+
 ## 33.2
